@@ -10,7 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet" />
-  <title>Amplidia</title>
+  <title>About Us | Amplidia</title>
 </head>
 
 <body class="flex flex-col justify-between bg-page-bg pt-15 min-h-screen">
@@ -22,7 +22,9 @@
 
         <ul class="flex gap-8 items-center max-sm:hidden">
           <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li>
+            <a href="/about.html" class="nav-link" aria-current="page">About</a>
+          </li>
           <li><a href="/services.html" class="nav-link">Services</a></li>
           <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
         </ul>
@@ -32,137 +34,101 @@
     </div>
   </header>
 
-  <main id="app-container" class="bg-surface">
-    <section id="hero-section" class="bg-page-bg border-b border-border">
-      <div id="hero-inner" class="dark main-container flex justify-between items-center gap-16 pt-28 pb-24">
-        <div class="flex-1 flex flex-col gap-5">
-          <p class="text-overline-style text-accent">
-            amplify your influence
-          </p>
-          <h1 class="text-text-1 -ml-2">
-            <img src="/src/assets/amplidia-icon.svg" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
-          </h1>
-          <p class="text-body-lg-style text-text-2">
-            We connect brands with creators that can reach the perfect
-            audience. <br />
-            Strategic matching, seamless execution, measurable results.
-          </p>
-          <div class="flex max-md:flex-col items-start gap-4 mt-5">
-            <a href="" class="btn btn-primary text-center w-42">See our work</a>
-            <a href="" class="btn btn-secondary text-center w-42">What we offer</a>
-          </div>
-          <a href="" class="btn btn-ghost">More about us →</a>
-        </div>
-
-        <div class="flex-1 max-sm:hidden">
-          <img src="./src/assets/img-home-hero.avif" alt="Hero Section Visual"
-            class="w-full aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
-        </div>
+  <main id="app-container" class="flex-1 bg-surface">
+    <section id="head-section" class="bg-page-bg border-b border-border">
+      <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
+        <p class="text-overline-style text-accent">our story</p>
+        <h1 class="text-text-1">Built on authentic partnerships</h1>
+        <p class="text-body-lg-style text-text-2">
+          We founded Amplidia with one belief — the best campaigns come from
+          genuine alignment.
+        </p>
+        <p class="text-body-lg-style text-text-2">
+          We help brands and influencers connect seamlessly with the perfect
+          match - to create collaborations that truly work, for both sides
+        </p>
       </div>
     </section>
 
-    <section id="about-us-teaser">
+    <section id="about-us-mission">
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
-          <img src="./src/assets/img-home-1.avif" alt="About Us Section Visual"
+          <img src="./src/assets/img-about.avif" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
 
         <div class="flex-1 flex flex-col items-start gap-5">
           <p class="text-overline-style text-accent">who we are</p>
-          <h2 class="text-text-1">Influence that converts</h2>
+          <h2 class="text-text-1">Bridging brands and creators</h2>
           <p class="text-body-style text-text-2">
-            Founded to bridge the gap between influencers and brands, to
-            create collaborations that truly work.<br />
-            Authentic, relationship-driven, strategic; we focus on genuine
-            alignment between creator audiences and brand values.
+            Every partnership starts the same way - understanding what a brand
+            actually needs, and what a creator can authentically deliver.
           </p>
-          <a href="" class="btn btn-ghost">Our story →</a>
+          <p class="text-body-style text-text-2">
+            For brands, we unlock access to engaged communities through voices
+            people trust. For influencers, we bring opportunities that align
+            with their expertise and audience - partnerships that feel
+            natural, not forced.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="services-teaser">
-      <div class="main-container flex max-md:flex-col justify-between gap-10 py-24 border-b border-border">
-        <div class="flex-1 flex flex-col items-start gap-5">
-          <p class="text-overline-style text-accent">what we do</p>
-          <h2 class="text-text-1">Every layer of your campaign</h2>
-          <p class="text-body-style text-text-2">
-            Driving measurable growth for both brands and creators.<br />
-            Co-ordination, strategy, analytics; we'll take care of it.
-          </p>
+    <section id="about-us-values">
+      <div class="main-container flex flex-col gap-10 py-24">
+        <div class="flex flex-col gap-5">
+          <p class="text-overline-style text-accent ml-1">what we believe</p>
+          <h2 class="text-text-1">Our values</h2>
         </div>
 
-        <div class="flex-1 grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/calendar.svg" class="w-8 h-8" alt="Calendar Icon" />
+            <img src="./src/assets/heart.svg" class="w-8 h-8" alt="Heart Icon" />
             <div class="flex flex-col gap-3">
-              <h4 class="text-text-1">Campaign Strategy & Management</h4>
+              <h4 class="text-text-1">Authenticity first</h4>
               <p class="text-body-sm-style text-text-2">
-                Aligning goals and directions; delivering on-time and on-brand
+                Only genuine creator-brand fit, never forced partnerships.
               </p>
             </div>
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/line-chart.svg" class="w-8 h-8" alt="Line Chart Icon" />
+            <img src="./src/assets/bar-chart.svg" class="w-8 h-8" alt="Bar Chart Icon" />
             <div class="flex flex-col gap-3">
-              <h4 class="text-text-1">Analytics & Insights</h4>
+              <h4 class="text-text-1">Results that matter</h4>
               <p class="text-body-sm-style text-text-2">
-                Audience and performance data; measurable results
+                Every decision is backed by data, measured against real goals.
               </p>
             </div>
           </div>
-          <a href="" class="btn btn-ghost">See more →</a>
-        </div>
-      </div>
-    </section>
 
-    <section id="why-amplidia">
-      <div class="main-container flex flex-col gap-5 py-24">
-        <p class="text-overline-style text-accent">why amplidia</p>
-        <h2 class="text-text-1">Why choose Amplidia</h2>
-        <p class="text-body-style text-text-2">
-          We believe the best campaigns come from genuine alignment. We
-          prioritize creator authenticity and brand values over quick wins -
-          building partnerships that resonate with audiences and deliver
-          lasting impact.
-        </p>
-        <p class="text-body-style text-text-2">
-          Our focus is driving measurable growth for both brands and creators
-          through strategic execution. We handle the strategy, coordination,
-          and analytics so you can focus on your brand or content. It's that
-          simple.
-        </p>
+          <div class="feature-card flex gap-7 items-center">
+            <img src="./src/assets/users.svg" class="w-8 h-8" alt="Users Icon" />
+            <div class="flex flex-col gap-3">
+              <h4 class="text-text-1">Relationships over transactions</h4>
+              <p class="text-body-sm-style text-text-2">
+                Long-term partnerships, not one-off deals.
+              </p>
+            </div>
+          </div>
 
-        <div class="flex justify-between bg-card border border-border rounded-xl p-5 mt-5">
-          <div class="flex flex-col items-center">
-            <p class="font-display text-heading-1/heading-1 font-bold text-accent">
-              120+
-            </p>
-            <p class="text-body-sm-style text-text-2 mt-1">Campaigns</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <p class="font-display text-heading-1/heading-1 font-bold text-accent">
-              40+
-            </p>
-            <p class="text-body-sm-style text-text-2 mt-1">Creators</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <p class="font-display text-heading-1/heading-1 font-bold text-accent">
-              98%
-            </p>
-            <p class="text-body-sm-style text-text-2 mt-1">Retention</p>
+          <div class="feature-card flex gap-7 items-center">
+            <img src="./src/assets/eye.svg" class="w-8 h-8" alt="Eye Icon" />
+            <div class="flex flex-col gap-3">
+              <h4 class="text-text-1">Transparency throughout</h4>
+              <p class="text-body-sm-style text-text-2">
+                Clear reporting, honest timelines, no surprises.
+              </p>
+            </div>
           </div>
         </div>
-        <a href="" class="btn btn-ghost">See our portfolio →</a>
       </div>
     </section>
 
     <section id="cta-section" class="bg-page-bg border-t border-border">
       <div class="dark main-container flex flex-col items-center gap-5 py-16">
-        <h2 class="text-text-1">Ready to amplify your influence?</h2>
+        <h2 class="text-text-1">Want to work with us?</h2>
         <p class="text-body-style text-text-2">
           Tell us what you're working on - we'll respond within 48 hours.
         </p>

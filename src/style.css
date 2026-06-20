@@ -68,7 +68,11 @@
   }
 
   *:focus {
-    @apply outline-none ring-2 ring-accent rounded-md;
+    @apply outline-none;
+  }
+
+  *:focus-visible {
+    @apply ring-2 ring-accent rounded-md;
   }
 }
 
@@ -101,12 +105,10 @@
     @apply text-body-sm text-[#94A3C0] transition-all duration-200;
   }
   .nav-link:hover,
-  .nav-link:active {
+  .nav-link:active,
+  .nav-link:focus,
+  .nav-link[aria-current="page"] {
     @apply text-[#E8EDF2];
-  }
-
-  .footer-link:active {
-    @apply text-[#94A3C0];
   }
 
   .btn {

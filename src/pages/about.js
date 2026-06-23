@@ -1,9 +1,8 @@
-import imgAbout from '../assets/img-about.avif';
-import heartIcon from '../assets/heart.svg';
-import barChartIcon from '../assets/bar-chart.svg';
-import usersIcon from '../assets/users.svg';
-import eyeIcon from '../assets/eye.svg';
-
+import imgAbout from "../assets/img-about.avif";
+import heartIcon from "../assets/heart.svg";
+import barChartIcon from "../assets/bar-chart.svg";
+import usersIcon from "../assets/users.svg";
+import eyeIcon from "../assets/eye.svg";
 
 export default function renderAbout() {
   return `
@@ -109,5 +108,5 @@ export default function renderAbout() {
       </div>
     </section>
   </div>
-  `
+  `;
 }

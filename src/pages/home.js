@@ -4,7 +4,6 @@ import homeImage1 from "../assets/img-home-1.avif";
 import calendarIcon from "../assets/calendar.svg";
 import lineChartIcon from "../assets/line-chart.svg";
 
-
 export default function renderHome() {
   return `
   <div class="animate-fade-in">
@@ -145,5 +144,5 @@ export default function renderHome() {
       </div>
     </section>
   </div>
-  `
+  `;
 }

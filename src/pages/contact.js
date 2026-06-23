@@ -1,4 +1,4 @@
-import successIcon from "../assets/check-circle.svg"
+import successIcon from "../assets/check-circle.svg";
 import alertIcon from "../assets/alert-circle.svg";
 import atSignIcon from "../assets/at-sign.svg";
 import phoneIcon from "../assets/phone.svg";
@@ -6,45 +6,45 @@ import clockIcon from "../assets/clock.svg";
 import infoIcon from "../assets/info.svg";
 
 export function initContact() {
-  const form = document.getElementById('contact-us-form');
+  const form = document.getElementById("contact-us-form");
 
-  if(!form) return
+  if (!form) return;
 
   if (!window.hcaptcha) {
     window.onHcaptchaLoad = renderHcaptcha;
 
-    const script = document.createElement('script');
-    script.src = 'https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit';
+    const script = document.createElement("script");
+    script.src =
+      "https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit";
     document.head.appendChild(script);
-
   } else {
     renderHcaptcha();
   }
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if (!validateForm(form)) return;
 
     const captchaToken = window.hcaptcha?.getResponse();
     if (!captchaToken) {
-      showError(form, 'Please complete the captcha.');
+      showError(form, "Please complete the captcha.");
       return;
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
 
     submitBtn.disabled = true;
-    submitBtn.classList.add('text-text-3');
+    submitBtn.classList.add("text-text-3");
 
     const formData = new FormData(form);
-    formData.delete('g-recaptcha-response')
-    formData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY);
+    formData.delete("g-recaptcha-response");
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
         body: formData,
       });
       const data = await response.json();
@@ -57,70 +57,79 @@ export function initContact() {
     } catch (error) {
       showError(form, error);
       submitBtn.disabled = false;
-      submitBtn.classList.remove('text-text-3');
+      submitBtn.classList.remove("text-text-3");
       window.hcaptcha?.reset();
     }
   });
 }
 
 function renderHcaptcha() {
-  window.hcaptcha.render('hcaptcha-widget', {
-    sitekey: import.meta.env.VITE_HCAPTCHA_SITEKEY
+  window.hcaptcha.render("hcaptcha-widget", {
+    sitekey: import.meta.env.VITE_HCAPTCHA_SITEKEY,
   });
 }
 
-function validateForm (form) {
+function validateForm(form) {
+  let isValid = true;
 
-  let isValid = true
-
-  form.querySelectorAll('input, textarea').forEach(inputField => {
-    if (inputField.closest('#hcaptcha-widget')) return;
+  form.querySelectorAll("input, textarea").forEach((inputField) => {
+    if (inputField.closest("#hcaptcha-widget")) return;
 
     if (!inputField.dataset.listenerAttached) {
-      inputField.addEventListener('input', () => {
+      inputField.addEventListener("input", () => {
         validateInputField(inputField);
-      })
-      inputField.dataset.listenerAttached = 'true';
+      });
+      inputField.dataset.listenerAttached = "true";
     }
 
-    if(!validateInputField(inputField))
-      isValid = false
+    if (!validateInputField(inputField)) isValid = false;
   });
 
-  return isValid
+  return isValid;
 }
 
-function validateInputField (inputField) {
+function validateInputField(inputField) {
   clearFieldError(inputField);
   const value = inputField.value.trim();
-  if (inputField.getAttribute('name') === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-    showFieldError(inputField, 'Please enter a valid email')
+  if (
+    inputField.getAttribute("name") === "email" &&
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+  ) {
+    showFieldError(inputField, "Please enter a valid email");
     return false;
   } else if (!value || value.length < 5) {
-    showFieldError(inputField, 'Please fill out this field with at least 5 characters')
+    showFieldError(
+      inputField,
+      "Please fill out this field with at least 5 characters",
+    );
     return false;
   }
   return true;
 }
 
-function showFieldError (inputField, message) {
-  inputField.classList.add('focus-visible:ring-error', 'focus:ring-error')
-  inputField.insertAdjacentHTML('afterend', `
+function showFieldError(inputField, message) {
+  inputField.classList.add("focus-visible:ring-error", "focus:ring-error");
+  inputField.insertAdjacentHTML(
+    "afterend",
+    `
     <p class="field-error text-body-sm-style text-error animate-fade-in">${message}</p>
-  `)
+  `,
+  );
 }
 
-function clearFieldError (inputField) {
-  const fieldErrorText = inputField.nextElementSibling
-  if (fieldErrorText?.classList.contains('field-error'))
+function clearFieldError(inputField) {
+  const fieldErrorText = inputField.nextElementSibling;
+  if (fieldErrorText?.classList.contains("field-error"))
     fieldErrorText.remove();
 
-  inputField.classList.remove('focus-visible:ring-error', 'focus:ring-error');
+  inputField.classList.remove("focus-visible:ring-error", "focus:ring-error");
 }
 
 function showSuccess(form) {
-  form.setAttribute('aria-hidden', 'true');
-  form.insertAdjacentHTML('beforeend', `
+  form.setAttribute("aria-hidden", "true");
+  form.insertAdjacentHTML(
+    "beforeend",
+    `
     <div class="animate-fade-in flex flex-col gap-2 items-center justify-center absolute inset-5 rounded-2xl bg-card z-10">
       <img src="${successIcon}" class="w-8 h-8" alt="Success Icon" />
       <h4 class="text-text-1">Message sent</h4>
@@ -128,13 +137,16 @@ function showSuccess(form) {
         We'll be in touch within 48 hours.
       </p>
     </div>
-  `);
+  `,
+  );
 }
 
 function showError(form, message) {
-  const existing = form.querySelector('.form-error');
+  const existing = form.querySelector(".form-error");
   if (existing) existing.remove();
-  form.insertAdjacentHTML('beforeend', `
+  form.insertAdjacentHTML(
+    "beforeend",
+    `
     <div class="animate-fade-in form-error flex flex-col gap-2 items-center justify-center rounded-2xl bg-card pointer-events-none mt-2">
       <img src="${alertIcon}" class="w-8 h-8" alt="Alert Icon" />
       <h4 class="text-text-1">Message not sent</h4>
@@ -142,7 +154,8 @@ function showError(form, message) {
         ${message}
       </p>
     </div>
-  `);
+  `,
+  );
 }
 
 export default function renderContact() {
@@ -203,5 +216,5 @@ export default function renderContact() {
       </div>
     </section>
   </div>
-  `
+  `;
 }

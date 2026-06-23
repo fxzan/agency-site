@@ -1,7 +1,7 @@
 import servicesImg from "../assets/img-services.avif";
 import checkSquareIcon from "../assets/check-square.svg";
 import editIcon from "../assets/edit.svg";
-import calendarIcon from "../assets/calendar.svg"
+import calendarIcon from "../assets/calendar.svg";
 import gridIcon from "../assets/grid.svg";
 import usersIcon from "../assets/users.svg";
 import lineChartIcon from "../assets/line-chart.svg";
@@ -159,5 +159,5 @@ export default function renderServices() {
       </div>
     </section>
   </div>
-  `
+  `;
 }

@@ -6,8 +6,15 @@
   --animate-fade-in: fadeIn 0.3s ease;
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-0.5rem); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /*  --------------  Color tokens  --------------  */
@@ -26,8 +33,10 @@
   --color-error: #d0021b;
 
   /*  --------------  Font families  ------------  */
-  --font-display: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Plus Jakarta Sans",
+  sans-serif;
+  --font-body: "Inter",
+  sans-serif;
 
   /*  --------------  Font sizes  ---------------  */
   --text-display: 3rem;
@@ -112,6 +121,7 @@
   .nav-link {
     @apply text-body-sm text-[#94A3C0] transition-all duration-200;
   }
+
   .nav-link:hover,
   .nav-link:active,
   .nav-link:focus,
@@ -126,6 +136,7 @@
   .btn-primary {
     @apply bg-accent text-on-accent;
   }
+
   .btn-primary:hover,
   .btn-primary:active,
   .btn-primary:focus {
@@ -135,6 +146,7 @@
   .btn-secondary {
     @apply border-border text-text-1;
   }
+
   .btn-secondary:hover,
   .btn-secondary:active,
   .btn-secondary:focus {
@@ -144,6 +156,7 @@
   .btn-ghost {
     @apply inline-flex items-center self-start text-text-3 p-0;
   }
+
   .btn-ghost:hover,
   .btn-ghost:active,
   .btn-ghost:focus {
@@ -153,16 +166,19 @@
   .feature-card {
     @apply bg-card border border-border rounded-xl p-7 transition-all duration-200;
   }
+
   .feature-card:hover {
     @apply -translate-y-1 border-accent shadow-[0_0.5rem_1.5rem_#00000014];
   }
+
   .sidebar-nav-link {
-    @apply border-l-2 border-border text-body-sm/body-sm text-text-2 px-3 py-1
+    @apply border-l-2 border-border text-body-sm/body-sm text-text-2 px-3 py-1;
   }
+
   .sidebar-nav-link:hover,
   .sidebar-nav-link:active,
   .sidebar-nav-link.active {
-    @apply border-accent text-text-1 font-semibold
+    @apply border-accent text-text-1 font-semibold;
   }
 }
 

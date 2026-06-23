@@ -1,4 +1,4 @@
-export default function renderPrivacyPolicy () {
+export default function renderPrivacyPolicy() {
   return `
   <div class="animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
@@ -586,5 +586,5 @@ export default function renderPrivacyPolicy () {
       </div>
     </section>
   </div>
-  `
+  `;
 }

@@ -4,17 +4,17 @@ import chevronRight from "../assets/chevron-right.svg";
 
 let autoAdvanceTimer = null;
 
-export async function initPortfolio () {
-  const grid = document.getElementById('campaigns-grid')
-  const slideBox = document.getElementById('carousel-slide')
+export async function initPortfolio() {
+  const grid = document.getElementById("campaigns-grid");
+  const slideBox = document.getElementById("carousel-slide");
 
   try {
-    const response = await fetch('/data/campaigns.json')
-    const campaigns = await response.json()
-    const featured = campaigns.filter(c => c.featured)
+    const response = await fetch("/data/campaigns.json");
+    const campaigns = await response.json();
+    const featured = campaigns.filter((c) => c.featured);
 
     slideBox.innerHTML = renderCarouselSlide(featured[0]);
-    grid.innerHTML = campaigns.map(c => renderGridCard(c)).join('');
+    grid.innerHTML = campaigns.map((c) => renderGridCard(c)).join("");
 
     initCarousel(featured, slideBox);
   } catch (error) {
@@ -27,13 +27,13 @@ export async function initPortfolio () {
           Failed to load campaigns
         </p>
       </div>
-    `
+    `;
     grid.innerHTML = errorContent;
     slideBox.innerHTML = errorContent;
   }
 }
 
-function renderGridCard (gridCampaign) {
+function renderGridCard(gridCampaign) {
   return `
     <div class="feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer">
       <img src="${gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-accent object-cover object-center" alt="${gridCampaign.name} Image" />
@@ -44,10 +44,10 @@ function renderGridCard (gridCampaign) {
         </p>
       </div>
     </div>
-  `
+  `;
 }
 
-function renderCarouselSlide (campaignSlide) {
+function renderCarouselSlide(campaignSlide) {
   return `
     <div class="flex-1 flex items-center">
       <img src="${campaignSlide.thumbUrl}" alt="${campaignSlide.name} Image"
@@ -61,69 +61,81 @@ function renderCarouselSlide (campaignSlide) {
         ${campaignSlide.description}
       </p>
       <div class="flex flex-wrap gap-6">
-        ${campaignSlide.metrics.map(m => `
+        ${campaignSlide.metrics
+      .map(
+        (m) => `
           <div class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-lg">
             <p class="font-display text-heading-2/heading-2 font-bold text-accent">
               ${m.metricValue}
             </p>
             <p class="text-body-sm-style text-text-2 mt-1">${m.metricName}</p>
           </div>
-        `).join('')}
+        `,
+      )
+      .join("")}
       </div>  
     </div>
-  `
+  `;
 }
 
-function initCarousel (featuredCampaigns, slideContainer) {
-  document.getElementById('carousel-dots').innerHTML = featuredCampaigns.map( (_, i) => `
-    <div class="dot w-${i === 0 ? '5' : '2'} h-2 rounded-full bg-${i === 0 ? 'accent' : 'border-soft'} transition-all duration-300 ease-in-out"></div>
-  `).join('');
+function initCarousel(featuredCampaigns, slideContainer) {
+  document.getElementById("carousel-dots").innerHTML = featuredCampaigns
+    .map(
+      (_, i) => `
+    <div class="dot w-${i === 0 ? "5" : "2"} h-2 rounded-full bg-${i === 0 ? "accent" : "border-soft"} transition-all duration-300 ease-in-out"></div>
+  `,
+    )
+    .join("");
 
-  const dotsArray = document.getElementById('carousel-dots').querySelectorAll('.dot');
+  const dotsArray = document
+    .getElementById("carousel-dots")
+    .querySelectorAll(".dot");
 
   let current = 0;
 
-  function navigateSlide (index) {
+  function navigateSlide(index) {
     current = (index + featuredCampaigns.length) % featuredCampaigns.length;
-    slideContainer.classList.add('opacity-0');
-    
-    setTimeout( () => {
-      slideContainer.innerHTML = renderCarouselSlide(featuredCampaigns[current]);
-      slideContainer.classList.remove('opacity-0')
+    slideContainer.classList.add("opacity-0");
+
+    setTimeout(() => {
+      slideContainer.innerHTML = renderCarouselSlide(
+        featuredCampaigns[current],
+      );
+      slideContainer.classList.remove("opacity-0");
     }, 600);
 
-    dotsArray.forEach( (dot, i) => {
+    dotsArray.forEach((dot, i) => {
       if (i === current) {
-        dot.classList.add('w-5', 'bg-accent')
-        dot.classList.remove('w-2', 'bg-border-soft')
+        dot.classList.add("w-5", "bg-accent");
+        dot.classList.remove("w-2", "bg-border-soft");
       } else {
-        dot.classList.remove('w-5', 'bg-accent')
-        dot.classList.add('w-2', 'bg-border-soft')
+        dot.classList.remove("w-5", "bg-accent");
+        dot.classList.add("w-2", "bg-border-soft");
       }
     });
   }
 
-  function resetAutoAdvance () {
+  function resetAutoAdvance() {
     clearInterval(autoAdvanceTimer);
     autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000);
   }
 
-  document.getElementById('carousel-nav-prev').addEventListener('click', () => {
+  document.getElementById("carousel-nav-prev").addEventListener("click", () => {
     navigateSlide(current - 1);
     resetAutoAdvance();
-  })
+  });
 
-  document.getElementById('carousel-nav-next').addEventListener('click', () => {
+  document.getElementById("carousel-nav-next").addEventListener("click", () => {
     navigateSlide(current + 1);
     resetAutoAdvance();
-  })
+  });
 
-  dotsArray.forEach( (dot, i) => {
-    dot.addEventListener('click', () => {
+  dotsArray.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
       navigateSlide(i);
       resetAutoAdvance();
-    })
-  })
+    });
+  });
 
   autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000);
 }
@@ -133,7 +145,7 @@ export function destroyPortfolio() {
   autoAdvanceTimer = null;
 }
 
-export default function renderPortfolio () {
+export default function renderPortfolio() {
   return `
   <div class="animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
@@ -191,5 +203,5 @@ export default function renderPortfolio () {
         <a href="/contact" class="btn btn-primary">Get in touch</a>
       </div>
     </section>
-  </div>`
+  </div>`;
 }

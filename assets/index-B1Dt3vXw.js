@@ -1,9 +1,9 @@
-(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();function e(){let e=localStorage.getItem(`theme`),t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(e===`system`||!e?t?`dark`:`light`:e)===`dark`&&document.documentElement.classList.add(`dark`),e||localStorage.setItem(`theme`,`system`);function n(e){let t=document.getElementById(`theme-toggle-icon`);t&&(e?(t.classList.add(`text-on-accent`,`bg-accent`),t.classList.remove(`bg-white/10`)):(t.classList.remove(`text-on-accent`,`bg-accent`),t.classList.add(`bg-white/10`)))}function r(){let e=document.documentElement.classList.toggle(`dark`);localStorage.setItem(`theme`,e?`dark`:`light`),n(e)}document.getElementById(`theme-toggle-icon`).addEventListener(`click`,r),n(document.documentElement.classList.contains(`dark`))}var t=`/agency-site/assets/amplidia-icon-CZAfZn02.svg`;function n(){let e=document.getElementById(`burger-button`),t=document.getElementById(`close-burger-button`),n=document.getElementById(`burger-nav-links`),r=document.getElementById(`overlay`);function i(){n.classList.add(`max-sm:-translate-x-45`),e.classList.add(`opacity-0`),r.classList.remove(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.add(`overflow-hidden`)}function a(){n.classList.remove(`max-sm:-translate-x-45`),e.classList.remove(`opacity-0`),r.classList.add(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.remove(`overflow-hidden`)}e.addEventListener(`click`,i),t.addEventListener(`click`,a),r.addEventListener(`click`,a),n.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,a)})}function r(){return`
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=`/agency-site/`.replace(/\/$/,``);function t(){let e=localStorage.getItem(`theme`),t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(e===`system`||!e?t?`dark`:`light`:e)===`dark`&&document.documentElement.classList.add(`dark`),e||localStorage.setItem(`theme`,`system`);function n(e){let t=document.getElementById(`theme-toggle-icon`);t&&(e?(t.classList.add(`text-on-accent`,`bg-accent`),t.classList.remove(`bg-white/10`)):(t.classList.remove(`text-on-accent`,`bg-accent`),t.classList.add(`bg-white/10`)))}function r(){let e=document.documentElement.classList.toggle(`dark`);localStorage.setItem(`theme`,e?`dark`:`light`),n(e)}document.getElementById(`theme-toggle-icon`).addEventListener(`click`,r),n(document.documentElement.classList.contains(`dark`))}var n=`/agency-site/assets/amplidia-icon-CZAfZn02.svg`;function r(){let e=document.getElementById(`burger-button`),t=document.getElementById(`close-burger-button`),n=document.getElementById(`burger-nav-links`),r=document.getElementById(`overlay`);function i(){n.classList.add(`max-sm:-translate-x-45`),e.classList.add(`opacity-0`),r.classList.remove(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.add(`overflow-hidden`)}function a(){n.classList.remove(`max-sm:-translate-x-45`),e.classList.remove(`opacity-0`),r.classList.add(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.remove(`overflow-hidden`)}e.addEventListener(`click`,i),t.addEventListener(`click`,a),r.addEventListener(`click`,a),n.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,a)})}function i(){return`
     <header class="fixed top-0 left-0 flex items-center bg-page-bg border-b border-[#d0d8e430] w-full h-15 z-100">
       <div class="dark main-container">
         <nav class="flex gap-8 justify-between items-center">
           <a href="/" data-page="home" class="font-display text-body-lg-style text-text-1 font-bold"><img
-              src="${t}" class="w-5 h-5 inline -translate-0.5" alt="A" />mplidia</a>
+              src="${n}" class="w-5 h-5 inline -translate-0.5" alt="A" />mplidia</a>
 
           <ul id="burger-nav-links"
             class="flex gap-8 items-center max-sm:flex-col max-sm:items-end max-sm:absolute max-sm:top-0 max-sm:-right-45 max-sm:w-45 max-sm:h-screen max-sm:px-8 max-sm:pt-19 max-sm:bg-page-bg/90 max-sm:z-200 max-sm:transition-all max-sm:ease-in max-sm:duration-300">
@@ -36,20 +36,20 @@
         </nav>
       </div>
     </header>  
-  `}var i=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M22.5%200c.83%200%201.5.67%201.5%201.5v21c0%20.83-.67%201.5-1.5%201.5h-6v-9h3l.75-3.75H16.5v-1.5c0-1.5.75-2.25%202.25-2.25h1.5V3.75h-3c-2.76%200-4.5%202.16-4.5%205.25v2.25h-3V15h3v9H1.5A1.5%201.5%200%200%201%200%2022.5v-21C0%20.67.67%200%201.5%200h21z'/%3e%3c/svg%3e`,a=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M16.98%200a6.9%206.9%200%200%201%205.08%201.98A6.94%206.94%200%200%201%2024%207.02v9.96c0%202.08-.68%203.87-1.98%205.13A7.14%207.14%200%200%201%2016.94%2024H7.06a7.06%207.06%200%200%201-5.03-1.89A6.96%206.96%200%200%201%200%2016.94V7.02C0%202.8%202.8%200%207.02%200h9.96zm.05%202.23H7.06c-1.45%200-2.7.43-3.53%201.25a4.82%204.82%200%200%200-1.3%203.54v9.92c0%201.5.43%202.7%201.3%203.58a5%205%200%200%200%203.53%201.25h9.88a5%205%200%200%200%203.53-1.25%204.73%204.73%200%200%200%201.4-3.54V7.02a5%205%200%200%200-1.3-3.49%204.82%204.82%200%200%200-3.54-1.3zM12%205.76c3.39%200%206.2%202.8%206.2%206.2a6.2%206.2%200%200%201-12.4%200%206.2%206.2%200%200%201%206.2-6.2zm0%202.22a3.99%203.99%200%200%200-3.97%203.97A3.99%203.99%200%200%200%2012%2015.92a3.99%203.99%200%200%200%203.97-3.97A3.99%203.99%200%200%200%2012%207.98zm6.44-3.77a1.4%201.4%200%201%201%200%202.8%201.4%201.4%200%200%201%200-2.8z'/%3e%3c/svg%3e`,o=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M20%200a4%204%200%200%201%204%204v16a4%204%200%200%201-4%204H4a4%204%200%200%201-4-4V4a4%204%200%200%201%204-4h16zm-7.7%207h-.6l-1.1.01c-1.48.03-3.7.1-4.46.29-.65.16-1.15.65-1.33%201.26-.18.64-.25%201.7-.29%202.46l-.02.82v.75c.03.76.1%202.09.31%202.85.18.61.68%201.1%201.33%201.26.74.19%202.87.26%204.34.29l1.41.01h1.16c1.45-.03%204-.09%204.81-.3a1.84%201.84%200%200%200%201.33-1.26c.2-.75.28-2.05.3-2.82v-.93c0-.67-.06-2.26-.3-3.13a1.84%201.84%200%200%200-1.33-1.26%2025.9%2025.9%200%200%200-3.88-.28L12.3%207zM10.46%209.9L14.39%2012l-3.92%202.11V9.89z'/%3e%3c/svg%3e`;function s(){return`
+  `}var a=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M22.5%200c.83%200%201.5.67%201.5%201.5v21c0%20.83-.67%201.5-1.5%201.5h-6v-9h3l.75-3.75H16.5v-1.5c0-1.5.75-2.25%202.25-2.25h1.5V3.75h-3c-2.76%200-4.5%202.16-4.5%205.25v2.25h-3V15h3v9H1.5A1.5%201.5%200%200%201%200%2022.5v-21C0%20.67.67%200%201.5%200h21z'/%3e%3c/svg%3e`,o=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M16.98%200a6.9%206.9%200%200%201%205.08%201.98A6.94%206.94%200%200%201%2024%207.02v9.96c0%202.08-.68%203.87-1.98%205.13A7.14%207.14%200%200%201%2016.94%2024H7.06a7.06%207.06%200%200%201-5.03-1.89A6.96%206.96%200%200%201%200%2016.94V7.02C0%202.8%202.8%200%207.02%200h9.96zm.05%202.23H7.06c-1.45%200-2.7.43-3.53%201.25a4.82%204.82%200%200%200-1.3%203.54v9.92c0%201.5.43%202.7%201.3%203.58a5%205%200%200%200%203.53%201.25h9.88a5%205%200%200%200%203.53-1.25%204.73%204.73%200%200%200%201.4-3.54V7.02a5%205%200%200%200-1.3-3.49%204.82%204.82%200%200%200-3.54-1.3zM12%205.76c3.39%200%206.2%202.8%206.2%206.2a6.2%206.2%200%200%201-12.4%200%206.2%206.2%200%200%201%206.2-6.2zm0%202.22a3.99%203.99%200%200%200-3.97%203.97A3.99%203.99%200%200%200%2012%2015.92a3.99%203.99%200%200%200%203.97-3.97A3.99%203.99%200%200%200%2012%207.98zm6.44-3.77a1.4%201.4%200%201%201%200%202.8%201.4%201.4%200%200%201%200-2.8z'/%3e%3c/svg%3e`,s=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='%234DA6FF'%3e%3cpath%20d='M20%200a4%204%200%200%201%204%204v16a4%204%200%200%201-4%204H4a4%204%200%200%201-4-4V4a4%204%200%200%201%204-4h16zm-7.7%207h-.6l-1.1.01c-1.48.03-3.7.1-4.46.29-.65.16-1.15.65-1.33%201.26-.18.64-.25%201.7-.29%202.46l-.02.82v.75c.03.76.1%202.09.31%202.85.18.61.68%201.1%201.33%201.26.74.19%202.87.26%204.34.29l1.41.01h1.16c1.45-.03%204-.09%204.81-.3a1.84%201.84%200%200%200%201.33-1.26c.2-.75.28-2.05.3-2.82v-.93c0-.67-.06-2.26-.3-3.13a1.84%201.84%200%200%200-1.33-1.26%2025.9%2025.9%200%200%200-3.88-.28L12.3%207zM10.46%209.9L14.39%2012l-3.92%202.11V9.89z'/%3e%3c/svg%3e`;function c(){return`
     <footer class="bg-page-bg border-t border-[#2A3F63]">
       <div class="dark main-container relative flex max-sm:flex-col justify-between max-sm:gap-10 py-8">
         <div class="flex flex-col gap-2 max-w-60">
           <a href="/" class="font-display text-body-lg-style text-text-1 font-bold"><img
-              src="${t}" class="w-5 h-5 inline -translate-0.5" />mplidia</a>
+              src="${n}" class="w-5 h-5 inline -translate-0.5" />mplidia</a>
           <div class="text-body-sm text-[#94A3C0]">
             Strategic influencer marketing for brands that care about results.
           </div>
           <div class="flex items-center gap-8 mt-4">
-            <a href="https://github.com/fxzan" target="_blank"><img src="${i}" class="w-6 h-6" /></a>
-            <a href="https://github.com/fxzan" target="_blank"><img src="${a}"
+            <a href="https://github.com/fxzan" target="_blank"><img src="${a}" class="w-6 h-6" /></a>
+            <a href="https://github.com/fxzan" target="_blank"><img src="${o}"
                 class="w-6 h-6" /></a>
-            <a href="https://github.com/fxzan" target="_blank"><img src="${o}" class="w-6 h-6" /></a>
+            <a href="https://github.com/fxzan" target="_blank"><img src="${s}" class="w-6 h-6" /></a>
           </div>
         </div>
 
@@ -99,7 +99,7 @@
         © Amplidia Media 2025. All rights reserved.
       </div>
     </footer>
-  `}var c=`/agency-site/assets/img-home-hero-BXG0klip.avif`,l=`/agency-site/assets/img-home-1-Dea0ClNE.avif`,u=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='3'%20y='4'%20width='18'%20height='18'%20rx='2'%20ry='2'%3e%3c/rect%3e%3cline%20x1='16'%20y1='2'%20x2='16'%20y2='6'%3e%3c/line%3e%3cline%20x1='8'%20y1='2'%20x2='8'%20y2='6'%3e%3c/line%3e%3cline%20x1='3'%20y1='10'%20x2='21'%20y2='10'%3e%3c/line%3e%3c/svg%3e`,d=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M3%203v18h18'/%3e%3cpath%20d='M18.7%208l-5.1%205.2-2.8-2.7L7%2014.3'/%3e%3c/svg%3e`;function f(){return`
+  `}var l=`/agency-site/assets/img-home-hero-BXG0klip.avif`,u=`/agency-site/assets/img-home-1-Dea0ClNE.avif`,d=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='3'%20y='4'%20width='18'%20height='18'%20rx='2'%20ry='2'%3e%3c/rect%3e%3cline%20x1='16'%20y1='2'%20x2='16'%20y2='6'%3e%3c/line%3e%3cline%20x1='8'%20y1='2'%20x2='8'%20y2='6'%3e%3c/line%3e%3cline%20x1='3'%20y1='10'%20x2='21'%20y2='10'%3e%3c/line%3e%3c/svg%3e`,f=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M3%203v18h18'/%3e%3cpath%20d='M18.7%208l-5.1%205.2-2.8-2.7L7%2014.3'/%3e%3c/svg%3e`;function p(){return`
   <div class="animate-fade-in">
     <section id="hero-section" class="bg-page-bg border-b border-border">
       <div id="hero-inner" class="dark main-container flex justify-between items-center gap-16 pt-28 pb-24">
@@ -108,7 +108,7 @@
             amplify your influence
           </p>
           <h1 class="text-text-1 -ml-2">
-            <img src="${t}" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
+            <img src="${n}" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
           </h1>
           <p class="text-body-lg-style text-text-2">
             We connect brands with creators that can reach the perfect
@@ -123,7 +123,7 @@
         </div>
 
         <div class="flex-1 max-sm:hidden">
-          <img src="${c}" alt="Hero Section Visual"
+          <img src="${l}" alt="Hero Section Visual"
             class="w-full aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
       </div>
@@ -133,7 +133,7 @@
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
-          <img src="${l}" alt="About Us Section Visual"
+          <img src="${u}" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
 
@@ -164,7 +164,7 @@
 
         <div class="flex-1 grid grid-cols-1 gap-4">
           <div class="feature-card flex gap-7 items-center">
-            <img src="${u}" class="w-8 h-8" alt="Calendar Icon" />
+            <img src="${d}" class="w-8 h-8" alt="Calendar Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Campaign Strategy & Management</h4>
               <p class="text-body-sm-style text-text-2">
@@ -174,7 +174,7 @@
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="${d}" class="w-8 h-8" alt="Line Chart Icon" />
+            <img src="${f}" class="w-8 h-8" alt="Line Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Analytics & Insights</h4>
               <p class="text-body-sm-style text-text-2">
@@ -238,7 +238,7 @@
       </div>
     </section>
   </div>
-  `}var p=`/agency-site/assets/img-about-BVfH1H8d.avif`,m=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20.84%204.61a5.5%205.5%200%200%200-7.78%200L12%205.67l-1.06-1.06a5.5%205.5%200%200%200-7.78%207.78l1.06%201.06L12%2021.23l7.78-7.78%201.06-1.06a5.5%205.5%200%200%200%200-7.78z'%3e%3c/path%3e%3c/svg%3e`,h=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='4'%20stroke-linecap='square'%20stroke-linejoin='bevel'%3e%3cline%20x1='18'%20y1='20'%20x2='18'%20y2='10'%3e%3c/line%3e%3cline%20x1='12'%20y1='20'%20x2='12'%20y2='4'%3e%3c/line%3e%3cline%20x1='6'%20y1='20'%20x2='6'%20y2='14'%3e%3c/line%3e%3c/svg%3e`,g=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M17%2021v-2a4%204%200%200%200-4-4H5a4%204%200%200%200-4%204v2'%3e%3c/path%3e%3ccircle%20cx='9'%20cy='7'%20r='4'%3e%3c/circle%3e%3cpath%20d='M23%2021v-2a4%204%200%200%200-3-3.87'%3e%3c/path%3e%3cpath%20d='M16%203.13a4%204%200%200%201%200%207.75'%3e%3c/path%3e%3c/svg%3e`,_=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M1%2012s4-8%2011-8%2011%208%2011%208-4%208-11%208-11-8-11-8z'%3e%3c/path%3e%3ccircle%20cx='12'%20cy='12'%20r='3'%3e%3c/circle%3e%3c/svg%3e`;function v(){return`
+  `}var m=`/agency-site/assets/img-about-BVfH1H8d.avif`,h=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20.84%204.61a5.5%205.5%200%200%200-7.78%200L12%205.67l-1.06-1.06a5.5%205.5%200%200%200-7.78%207.78l1.06%201.06L12%2021.23l7.78-7.78%201.06-1.06a5.5%205.5%200%200%200%200-7.78z'%3e%3c/path%3e%3c/svg%3e`,g=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='4'%20stroke-linecap='square'%20stroke-linejoin='bevel'%3e%3cline%20x1='18'%20y1='20'%20x2='18'%20y2='10'%3e%3c/line%3e%3cline%20x1='12'%20y1='20'%20x2='12'%20y2='4'%3e%3c/line%3e%3cline%20x1='6'%20y1='20'%20x2='6'%20y2='14'%3e%3c/line%3e%3c/svg%3e`,_=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M17%2021v-2a4%204%200%200%200-4-4H5a4%204%200%200%200-4%204v2'%3e%3c/path%3e%3ccircle%20cx='9'%20cy='7'%20r='4'%3e%3c/circle%3e%3cpath%20d='M23%2021v-2a4%204%200%200%200-3-3.87'%3e%3c/path%3e%3cpath%20d='M16%203.13a4%204%200%200%201%200%207.75'%3e%3c/path%3e%3c/svg%3e`,v=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M1%2012s4-8%2011-8%2011%208%2011%208-4%208-11%208-11-8-11-8z'%3e%3c/path%3e%3ccircle%20cx='12'%20cy='12'%20r='3'%3e%3c/circle%3e%3c/svg%3e`;function ee(){return`
   <div class="animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
@@ -259,7 +259,7 @@
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
-          <img src="${p}" alt="About Us Section Visual"
+          <img src="${m}" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
 
@@ -289,7 +289,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <div class="feature-card flex gap-7 items-center">
-            <img src="${m}" class="w-8 h-8" alt="Heart Icon" />
+            <img src="${h}" class="w-8 h-8" alt="Heart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Authenticity first</h4>
               <p class="text-body-sm-style text-text-2">
@@ -299,7 +299,7 @@
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="${h}" class="w-8 h-8" alt="Bar Chart Icon" />
+            <img src="${g}" class="w-8 h-8" alt="Bar Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Results that matter</h4>
               <p class="text-body-sm-style text-text-2">
@@ -309,7 +309,7 @@
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="${g}" class="w-8 h-8" alt="Users Icon" />
+            <img src="${_}" class="w-8 h-8" alt="Users Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Relationships over transactions</h4>
               <p class="text-body-sm-style text-text-2">
@@ -319,7 +319,7 @@
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="${_}" class="w-8 h-8" alt="Eye Icon" />
+            <img src="${v}" class="w-8 h-8" alt="Eye Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Transparency throughout</h4>
               <p class="text-body-sm-style text-text-2">
@@ -414,7 +414,7 @@
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${u}" class="w-8 h-8" alt="Calendar Icon" />
+            <img src="${d}" class="w-8 h-8" alt="Calendar Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Campaign management</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -448,7 +448,7 @@
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${g}" class="w-8 h-8" alt="Users Icon" />
+            <img src="${_}" class="w-8 h-8" alt="Users Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Audience analytics & targeting</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -464,7 +464,7 @@
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${d}" class="w-8 h-8" alt="Line Chart Icon" />
+            <img src="${f}" class="w-8 h-8" alt="Line Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">
                 Performance analytics & growth insights
@@ -493,7 +493,7 @@
       </div>
     </section>
   </div>
-  `}var w=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23d0021b'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='8'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='16'%20x2='12.01'%20y2='16'%3e%3c/line%3e%3c/svg%3e`,T=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M15%2018l-6-6%206-6'/%3e%3c/svg%3e`,E=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M9%2018l6-6-6-6'/%3e%3c/svg%3e`,D=null;async function O(){let e=document.getElementById(`campaigns-grid`),t=document.getElementById(`carousel-slide`);try{let n=await(await fetch(`/data/campaigns.json`)).json(),r=n.filter(e=>e.featured);t.innerHTML=A(r[0]),e.innerHTML=n.map(e=>k(e)).join(``),j(r,t)}catch(n){console.log(n);let r=`
+  `}var w=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23d0021b'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='8'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='16'%20x2='12.01'%20y2='16'%3e%3c/line%3e%3c/svg%3e`,T=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M15%2018l-6-6%206-6'/%3e%3c/svg%3e`,E=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M9%2018l6-6-6-6'/%3e%3c/svg%3e`,D=null;async function O(){let t=document.getElementById(`campaigns-grid`),n=document.getElementById(`carousel-slide`);try{let r=await(await fetch(`${e}/data/campaigns.json`)).json(),i=r.filter(e=>e.featured);n.innerHTML=A(i[0]),t.innerHTML=r.map(e=>k(e)).join(``),j(i,n)}catch(e){console.log(e);let r=`
       <div class="min-h-100 animate-fade-in form-error flex flex-col gap-5 items-center justify-center rounded-2xl bg-card">
         <img src="${w}" class="w-10 h-10" alt="Alert Icon" />
         <h2 class="text-text-1 text-center">Campaigns not found</h2>
@@ -501,30 +501,30 @@
           Failed to load campaigns
         </p>
       </div>
-    `;e.innerHTML=r,t.innerHTML=r}}function k(e){return`
+    `;t.innerHTML=r,n.innerHTML=r}}function k(t){return`
     <div class="feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer">
-      <img src="${e.thumbUrl}" class="w-full h-full aspect-4/3 bg-accent object-cover object-center" alt="${e.name} Image" />
+      <img src="${e+t.thumbUrl}" class="w-full h-full aspect-4/3 bg-accent object-cover object-center" alt="${t.name} Image" />
       <div class="flex flex-col gap-3 px-4 pb-4">
-        <h4 class="text-text-1">${e.name}</h4>
+        <h4 class="text-text-1">${t.name}</h4>
         <p class="text-caption text-accent">
-          ${e.date}
+          ${t.date}
         </p>
       </div>
     </div>
-  `}function A(e){return`
+  `}function A(t){return`
     <div class="flex-1 flex items-center">
-      <img src="${e.thumbUrl}" alt="${e.name} Image"
+      <img src="${e+t.thumbUrl}" alt="${t.name} Image"
         class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
     </div>
 
     <div class="flex-1 flex flex-col items-start gap-5">
-      <p class="text-overline-style text-accent">${e.date}</p>
-      <h2 class="text-text-1">${e.name}</h2>
+      <p class="text-overline-style text-accent">${t.date}</p>
+      <h2 class="text-text-1">${t.name}</h2>
       <p class="text-body-style text-text-2">
-        ${e.description}
+        ${t.description}
       </p>
       <div class="flex flex-wrap gap-6">
-        ${e.metrics.map(e=>`
+        ${t.metrics.map(e=>`
           <div class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-lg">
             <p class="font-display text-heading-2/heading-2 font-bold text-accent">
               ${e.metricValue}
@@ -593,7 +593,7 @@
         <a href="/contact" class="btn btn-primary">Get in touch</a>
       </div>
     </section>
-  </div>`}function P(){return`
+  </div>`}function te(){return`
   <div class="animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-14 pb-12">
@@ -1180,11 +1180,11 @@
       </div>
     </section>
   </div>
-  `}var ee=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23047857'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2011.08V12a10%2010%200%201%201-5.93-9.14'%3e%3c/path%3e%3cpolyline%20points='22%204%2012%2014.01%209%2011.01'%3e%3c/polyline%3e%3c/svg%3e`,F=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'%3e%3c/circle%3e%3cpath%20d='M16%208v5a3%203%200%200%200%206%200v-1a10%2010%200%201%200-3.92%207.94'%3e%3c/path%3e%3c/svg%3e`,I=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6%2019.79%2019.79%200%200%201-3.07-8.67A2%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'%3e%3c/path%3e%3c/svg%3e`,L=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cpolyline%20points='12%206%2012%2012%2016%2014'%3e%3c/polyline%3e%3c/svg%3e`,R=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='16'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='8'%20x2='12.01'%20y2='8'%3e%3c/line%3e%3c/svg%3e`;function z(){let e=document.getElementById(`contact-us-form`);if(e){if(window.hcaptcha)B();else{window.onHcaptchaLoad=B;let e=document.createElement(`script`);e.src=`https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit`,document.head.appendChild(e)}e.addEventListener(`submit`,async t=>{if(t.preventDefault(),!V(e))return;if(!window.hcaptcha?.getResponse()){K(e,`Please complete the captcha.`);return}let n=e.querySelector(`button[type="submit"]`);n.disabled=!0,n.classList.add(`text-text-3`);let r=new FormData(e);r.delete(`g-recaptcha-response`),r.append(`access_key`,`32669c55-bd87-4cb8-a80d-1aeac67894b1`);try{let t=await(await fetch(`https://api.web3forms.com/submit`,{method:`POST`,headers:{Accept:`application/json`},body:r})).json();if(t.success)G(e);else throw Error(t.message)}catch(t){K(e,t),n.disabled=!1,n.classList.remove(`text-text-3`),window.hcaptcha?.reset()}})}}function B(){window.hcaptcha.render(`hcaptcha-widget`,{sitekey:`50b2fe65-b00b-4b9e-ad62-3ba471098be2`})}function V(e){let t=!0;return e.querySelectorAll(`input, textarea`).forEach(e=>{e.closest(`#hcaptcha-widget`)||(e.dataset.listenerAttached||(e.addEventListener(`input`,()=>{H(e)}),e.dataset.listenerAttached=`true`),H(e)||(t=!1))}),t}function H(e){W(e);let t=e.value.trim();return e.getAttribute(`name`)===`email`&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)?(U(e,`Please enter a valid email`),!1):!t||t.length<5?(U(e,`Please fill out this field with at least 5 characters`),!1):!0}function U(e,t){e.classList.add(`focus-visible:ring-error`,`focus:ring-error`),e.insertAdjacentHTML(`afterend`,`
+  `}var P=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23047857'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2011.08V12a10%2010%200%201%201-5.93-9.14'%3e%3c/path%3e%3cpolyline%20points='22%204%2012%2014.01%209%2011.01'%3e%3c/polyline%3e%3c/svg%3e`,F=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'%3e%3c/circle%3e%3cpath%20d='M16%208v5a3%203%200%200%200%206%200v-1a10%2010%200%201%200-3.92%207.94'%3e%3c/path%3e%3c/svg%3e`,I=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6%2019.79%2019.79%200%200%201-3.07-8.67A2%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'%3e%3c/path%3e%3c/svg%3e`,L=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cpolyline%20points='12%206%2012%2012%2016%2014'%3e%3c/polyline%3e%3c/svg%3e`,R=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='16'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='8'%20x2='12.01'%20y2='8'%3e%3c/line%3e%3c/svg%3e`;function z(){let e=document.getElementById(`contact-us-form`);if(e){if(window.hcaptcha)B();else{window.onHcaptchaLoad=B;let e=document.createElement(`script`);e.src=`https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit`,document.head.appendChild(e)}e.addEventListener(`submit`,async t=>{if(t.preventDefault(),!V(e))return;if(!window.hcaptcha?.getResponse()){K(e,`Please complete the captcha.`);return}let n=e.querySelector(`button[type="submit"]`);n.disabled=!0,n.classList.add(`text-text-3`);let r=new FormData(e);r.delete(`g-recaptcha-response`),r.append(`access_key`,`32669c55-bd87-4cb8-a80d-1aeac67894b1`);try{let t=await(await fetch(`https://api.web3forms.com/submit`,{method:`POST`,headers:{Accept:`application/json`},body:r})).json();if(t.success)G(e);else throw Error(t.message)}catch(t){K(e,t),n.disabled=!1,n.classList.remove(`text-text-3`),window.hcaptcha?.reset()}})}}function B(){window.hcaptcha.render(`hcaptcha-widget`,{sitekey:`50b2fe65-b00b-4b9e-ad62-3ba471098be2`})}function V(e){let t=!0;return e.querySelectorAll(`input, textarea`).forEach(e=>{e.closest(`#hcaptcha-widget`)||(e.dataset.listenerAttached||(e.addEventListener(`input`,()=>{H(e)}),e.dataset.listenerAttached=`true`),H(e)||(t=!1))}),t}function H(e){W(e);let t=e.value.trim();return e.getAttribute(`name`)===`email`&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)?(U(e,`Please enter a valid email`),!1):!t||t.length<5?(U(e,`Please fill out this field with at least 5 characters`),!1):!0}function U(e,t){e.classList.add(`focus-visible:ring-error`,`focus:ring-error`),e.insertAdjacentHTML(`afterend`,`
     <p class="field-error text-body-sm-style text-error animate-fade-in">${t}</p>
   `)}function W(e){let t=e.nextElementSibling;t?.classList.contains(`field-error`)&&t.remove(),e.classList.remove(`focus-visible:ring-error`,`focus:ring-error`)}function G(e){e.setAttribute(`aria-hidden`,`true`),e.insertAdjacentHTML(`beforeend`,`
     <div class="animate-fade-in flex flex-col gap-2 items-center justify-center absolute inset-5 rounded-2xl bg-card z-10">
-      <img src="${ee}" class="w-8 h-8" alt="Success Icon" />
+      <img src="${P}" class="w-8 h-8" alt="Success Icon" />
       <h4 class="text-text-1">Message sent</h4>
       <p class="text-body-sm-style text-text-2">
         We'll be in touch within 48 hours.
@@ -1274,4 +1274,4 @@
       </div>
     </div>
   </div>
-  `}var Y={"/":f,"/about":v,"/services":C,"/portfolio":N,"/contact":q,"/privacy":P},X={"/":`Amplidia`,"/about":`About Us | Amplidia`,"/services":`Services | Amplidia`,"/portfolio":`Portfolio | Amplidia`,"/contact":`Contact Us | Amplidia`,"/privacy":`Privacy Policy | Amplidia`},Z=document.getElementById(`app-container`);Z.insertAdjacentHTML(`beforebegin`,r()),Z.insertAdjacentHTML(`afterend`,s()),n(),e();function Q(){return window.location.pathname.replace(`/index.html`,``)||`/`}async function $(){let e=Q();window.location.pathname===`/index.html`&&history.replaceState(null,``,`/`);let t=Y[e]??J;document.title=X[e]??`404 | Amplidia`,Z.innerHTML=t(),e===`/contact`&&z(),e===`/portfolio`?await O():M(),te(e),window.location.hash||window.scrollTo(0,0),document.getElementById(`initial-loader`)?.remove()}function te(e){let t=e===`/`?`home`:e.replace(`/`,``);document.getElementById(`burger-nav-links`).querySelectorAll(`a`).forEach(e=>{e.dataset.page===t?e.setAttribute(`aria-current`,`page`):e.removeAttribute(`aria-current`)})}document.addEventListener(`click`,e=>{let t=e.target.closest(`a`);t&&t.target!==`_blank`&&(t.href&&!t.href.startsWith(window.location.origin)||t.getAttribute(`href`).startsWith(`#`)||(e.preventDefault(),history.pushState(null,``,t.href),$().catch(console.error)))}),window.addEventListener(`popstate`,()=>$().catch(console.error)),$().catch(console.error);
+  `}var Y={"/":p,"/about":ee,"/services":C,"/portfolio":N,"/contact":q,"/privacy":te},X={"/":`Amplidia`,"/about":`About Us | Amplidia`,"/services":`Services | Amplidia`,"/portfolio":`Portfolio | Amplidia`,"/contact":`Contact Us | Amplidia`,"/privacy":`Privacy Policy | Amplidia`},Z=document.getElementById(`app-container`);Z.insertAdjacentHTML(`beforebegin`,i()),Z.insertAdjacentHTML(`afterend`,c()),r(),t();function Q(){return window.location.pathname.replace(e,``).replace(`/index.html`,``)||`/`}async function $(){let t=Q();window.location.pathname===`/index.html`&&history.replaceState(null,``,e+`/`);let n=Y[t]??J;document.title=X[t]??`404 | Amplidia`,Z.innerHTML=n(),t===`/contact`&&z(),t===`/portfolio`?await O():M(),ne(t),window.location.hash||window.scrollTo(0,0),document.getElementById(`initial-loader`)?.remove()}function ne(e){let t=e===`/`?`home`:e.replace(`/`,``);document.getElementById(`burger-nav-links`).querySelectorAll(`a`).forEach(e=>{e.dataset.page===t?e.setAttribute(`aria-current`,`page`):e.removeAttribute(`aria-current`)})}document.addEventListener(`click`,t=>{let n=t.target.closest(`a`);n&&n.target!==`_blank`&&(n.href&&!n.href.startsWith(window.location.origin)||n.getAttribute(`href`).startsWith(`#`)||(t.preventDefault(),history.pushState(null,``,e+n.getAttribute(`href`)),$().catch(console.error)))}),window.addEventListener(`popstate`,()=>$().catch(console.error)),$().catch(console.error);

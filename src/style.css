@@ -3,6 +3,13 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --animate-fade-in: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   /*  --------------  Color tokens  --------------  */
   --color-page-bg: #0f1b2d;
   --color-deep: #1a3a5c;
@@ -16,6 +23,7 @@
   --color-text-3: #6b7a8e;
   --color-border-soft: #1e2d4a;
   --color-on-accent: #0a0f1e;
+  --color-error: #d0021b;
 
   /*  --------------  Font families  ------------  */
   --font-display: "Plus Jakarta Sans", sans-serif;
@@ -148,6 +156,14 @@
   .feature-card:hover {
     @apply -translate-y-1 border-accent shadow-[0_0.5rem_1.5rem_#00000014];
   }
+  .sidebar-nav-link {
+    @apply border-l-2 border-border text-body-sm/body-sm text-text-2 px-3 py-1
+  }
+  .sidebar-nav-link:hover,
+  .sidebar-nav-link:active,
+  .sidebar-nav-link.active {
+    @apply border-accent text-text-1 font-semibold
+  }
 }
 
 .dark {
@@ -161,21 +177,6 @@
   --color-text-1: #e2e8f0;
   --color-text-2: #94a3b8;
   --color-text-3: #64748b;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --color-page-bg: #0a0f1e;
-    --color-deep: #111827;
-    --color-mid: #1e2d4a;
-    --color-accent: #4da6ff;
-    --color-surface: #111827;
-    --color-card: #1e2d4a;
-    --color-border: #2a3f63;
-    --color-text-1: #e2e8f0;
-    --color-text-2: #94a3b8;
-    --color-text-3: #64748b;
-  }
 }
 
 @media (width < 1024px) {

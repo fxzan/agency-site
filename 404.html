@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Figma Landing Page</title>
+  </head>
+
+  <body
+    class="flex flex-col items-center bg-foundation-black text-white relative"
+  >
+    <div
+      id="overlay"
+      class="h-screen w-screen z-40 hidden bg-transparent fixed top-0 right-0"
+    ></div>
+    <header
+      aria-label="Header"
+      class="flex justify-between items-center py-6 px-8 w-full lg:px-20 3xl:px-28.75 3xl:w-480 absolute top-0"
+    >
+      <div class="h-28 w-28 lg:h-45 lg:w-45">
+        <img
+          src="./src/assets/key-logo.png"
+          alt="Key Global Logo"
+          class="w-full"
+        />
+      </div>
+      <nav
+        id="navlinks"
+        class="max-lg:translate-x-full max-lg:transition-all max-lg:ease-in max-lg:duration-300 max-lg:fixed max-lg:top-0 max-lg:right-0 flex max-lg:flex-col max-lg:bg-[rgba(0,0,0,0.6)] max-lg:w-[40vw] max-lg:h-screen max-lg:pr-8 max-lg:z-50 gap-10 items-end lg:items-center"
+      >
+        <button
+          aria-label="Close Menu"
+          id="close-button"
+          class="flex flex-col gap-1.5 cursor-pointer z-100 lg:hidden absolute top-19"
+        >
+          <span
+            class="w-6 h-0.5 bg-primary-yellow translate-y-1 rotate-45"
+          ></span>
+          <span
+            class="w-6 h-0.5 bg-primary-yellow -translate-y-1 -rotate-45"
+          ></span>
+        </button>
+        <ul
+          class="flex max-lg:flex-col max-lg:w-full max-lg:mt-34.5 items-end gap-6 text-lg/7 font-medium"
+        >
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#ventures">Our Venture</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+        <a href="#home" class="btn btn-primary leading-6">JOIN US</a>
+      </nav>
+      <button
+        aria-label="Open Menu"
+        id="burger"
+        class="flex flex-col gap-1.5 cursor-pointer lg:hidden opacity-100 transition-all ease-in-out duration-300"
+      >
+        <span class="w-6 h-0.5 bg-primary-yellow"></span>
+        <span class="w-6 h-0.5 bg-primary-yellow"></span>
+      </button>
+    </header>
+
+    <main class="flex flex-col items-center w-full 3xl:w-480">
+      <section
+        id="home"
+        class="flex flex-col bg-[url(/src/assets/home.png)] bg-cover bg-center w-full max-3xl:h-225 h-270"
+      >
+        <div
+          class="flex flex-col mt-108 gap-12 items-center 3xl:w-211 3xl:h-102.25 mx-auto"
+        >
+          <h1
+            class="font-dm-serif-display text-[4rem]/20 3xl:text-[10rem]/37.5 tracking-[-0.015em] uppercase header-gradient"
+          >
+            key to the
+            <span
+              class="text-[5.85rem]/20 3xl:text-[14.625rem]/42.5 tracking-normal block"
+              >future</span
+            >
+          </h1>
+          <a
+            class="btn btn-primary py-4 px-12 leading-6 hover:bg-transparent active:bg-transparent focus:bg-transparent"
+            href="#home"
+            >JOIN OUR CLUB</a
+          >
+        </div>
+      </section>
+
+      <section
+        id="about-us"
+        class="flex gap-20 justify-center 3xl:justify-start items-center py-31.5 px-8 lg:px-20 3xl:px-28.75 w-full"
+      >
+        <div class="3xl:h-137.25 3xl:w-137.25 max-md:hidden max-3xl:flex-1">
+          <img
+            src="./src/assets/key-logo.png"
+            alt="Key Global Logo"
+            class="w-full"
+          />
+        </div>
+
+        <div class="flex flex-col gap-14 max-3xl:flex-2">
+          <div class="flex flex-col gap-6">
+            <h2 class="uppercase">about<span>us</span></h2>
+            <div class="w-40 h-0 border-2 border-primary-yellow"></div>
+          </div>
+
+          <div class="flex flex-col gap-10 py-8 3xl:px-4 w-full 3xl:w-216.75">
+            <p class="font-medium text-lg/7">
+              Welcome to
+              <strong>“Key Global CO-Operative Penang Berhad”</strong>, where we
+              believe in the power of community and entreprenership. Founded on
+              the principles of mutual support and shared success, our
+              co-operative is dedicated to fostering the spirit of
+              entrepreneurship and transforming lives within our community.
+            </p>
+            <div>
+              <h4 class="mb-2">Our Purpose</h4>
+              <p class="font-medium text-lg/7">
+                At <strong>“Key Global CO-Operative Penang Berhad”</strong>, our
+                primary purpose is to create entrepreneurs and drive positive
+                change within our community. We understand that economic
+                empowerment and business success are key drivers of community
+                betterment. Through our various programs, resources, and support
+                systems, we aim to provide aspiring entrepreneurs with the
+                tools, knowledge and opportunities they need to succeed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="mission"
+        class="flex max-md:flex-col-reverse gap-10 justify-between items-center py-15 px-8 lg:px-20 3xl:px-28.75 w-full"
+      >
+        <div
+          class="flex flex-col gap-10 items-start w-full 3xl:w-118 max-3xl:flex-1"
+        >
+          <div class="flex flex-col gap-6">
+            <h2 class="uppercase">our<span>mission</span></h2>
+            <div class="w-40 h-0 border-2 border-primary-yellow"></div>
+          </div>
+          <div class="w-full aspect-square md:hidden">
+            <img
+              src="./src/assets/mission.jpg"
+              class="object-cover w-full h-full"
+              alt="Mission Image"
+            />
+          </div>
+          <p class="font-medium text-lg/7">
+            Our mission is to cultivate a thriving community of entrepreneurs
+            who can contribute to sustainable economic growth and social
+            development. By offering training, mentorship, financial support and
+            networking opportunities, we strive to empower individuals to take
+            control of their economic destinies and build successful businesses
+            that benefit themselves and the wider community.
+          </p>
+          <a href="#home" class="btn btn-alternate">UNLOCK YOUR POTENTIAL</a>
+        </div>
+
+        <div
+          class="max-md:hidden max-3xl:flex-1 max-3xl:aspect-square 3xl:w-211.25 3xl:h-180"
+        >
+          <img
+            src="./src/assets/mission.jpg"
+            class="object-cover w-full h-full"
+            alt="Mission Image"
+          />
+        </div>
+      </section>
+
+      <section
+        id="vision"
+        class="flex gap-10 3xl:gap-65 items-center py-15 px-8 lg:px-20 3xl:px-28.75 w-full"
+      >
+        <div
+          class="max-md:hidden max-3xl:flex-1 max-3xl:aspect-square 3xl:w-211.25 3xl:h-181.75"
+        >
+          <img
+            src="./src/assets/vision.jpg"
+            class="object-cover h-full"
+            alt="Vision Image"
+          />
+        </div>
+
+        <div
+          class="flex flex-col gap-10 items-start w-full max-3xl:flex-1 3xl:w-96.5"
+        >
+          <div class="flex flex-col gap-6">
+            <h2 class="uppercase">our<span>vision</span></h2>
+            <div class="w-40 h-0 border-2 border-primary-yellow"></div>
+          </div>
+          <div class="w-full aspect-square md:hidden">
+            <img
+              src="./src/assets/vision.jpg"
+              class="object-cover h-full"
+              alt="Vision Image"
+            />
+          </div>
+          <p class="font-medium text-lg/7">
+            We envision a vibrant, self-sustaining community where
+            entrepreneurship flourishes and individuals have the opportunity to
+            achieve their full potential. Our goal is to be a catalyst for
+            change, inspiring and enabling our members to create businesses that
+            not only succeed but also uplift and enhance the quality of life for
+            everyone in our community.
+          </p>
+          <a href="#home" class="btn btn-alternate">BUILD YOUR LEGACY NOW</a>
+        </div>
+      </section>
+
+      <section
+        id="ceo"
+        class="flex gap-10 3xl:gap-20 items-center py-31.5 px-8 lg:px-28.75 w-full"
+      >
+        <div class="max-md:hidden max-3xl:flex-1 3xl:w-130.75 3xl:h-161.25">
+          <img
+            src="/src/assets/ceo.png"
+            alt="CEO"
+            class="w-full h-full object-cover max-3xl:object-top"
+          />
+        </div>
+
+        <div class="flex flex-col max-3xl:flex-2">
+          <div class="flex flex-col gap-6">
+            <h2>Founder &<span>CEO</span></h2>
+            <div class="w-40 h-0 border-2 border-primary-yellow"></div>
+          </div>
+          <div class="w-full aspect-square mt-10 md:hidden">
+            <img
+              src="/src/assets/ceo.png"
+              alt="CEO"
+              class="w-full h-full object-cover max-3xl:object-top"
+            />
+          </div>
+          <div class="flex flex-col gap-2.5 py-8 md:px-8 w-full 3xl:w-216.75">
+            <h4>Dr. KUGILAN PUSHPANATHAN Phd. h.c.</h4>
+            <p class="font-medium text-lg/7">
+              Dr.Kugilan is the visionary leader behind
+              <strong>“Key Global CO-Operative Penang Berhad”</strong>, whereby
+              he is driven by a steadfast commitment to empower individuals and
+              uplift communities through entrepreneurship. Dr.Kugilan was
+              honored “Doctorate in Entrepreneurship” by
+              <strong>“The International University of Peace”</strong> in year
+              2019. Besides that, Dr.Kugilan also received a honouring award for
+              <strong>“The Best Personal Brand Award 2020/2021”</strong>. The
+              Bristishpedia Successful People of Malaysia Biography also has
+              given recognition to Dr. Kugilan by interviewing and having
+              Dr.Kugilan's biography displayed in their 2nd edition of
+              Biography. Dr. Kugilan embarked on a transformative journey when
+              he formed his own company in year 2015, named as
+              <strong>“Key Global Network Sdn. Bhd.”</strong> Driven by a
+              commitment to create meaningful change, Dr.Kugilan recognized the
+              potential to further amplify entrepreneurship impact by
+              transitioning into a cooperative model. Hence, with a profound
+              passion for social impact and economic empowerment, Dr.Kugilan
+              founded
+              <strong>“Key Global CO-Operative Penang Berhad”</strong> with a
+              clear mission to foster a new generation of entrepreneurs and
+              uplift the lives of community members.
+            </p>
+            <p class="font-medium text-lg/7 mt-6">
+              Dr. Kugilan envisoned
+              <strong>“Key Global CO-Operative Penang Berhad”</strong> as a
+              catalyst for change, aiming to empower individuals with the
+              skills, resources, and opportunities needed to succeed in
+              business. Furthermore, Dr.Kugilan spearheads initiatives that
+              provide mentorship, training programs, and access to financing,
+              ensuring that members receive comprehensive support throughout
+              their entrepreneurial journey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="ventures"
+        class="flex flex-col py-31.5 px-8 md:px-28.75 gap-14 md:text-center md:items-center w-full"
+      >
+        <div class="flex flex-col md:items-center gap-6">
+          <h2>Our<span>VENTURES</span></h2>
+          <div class="w-40 h-0 border-2 border-primary-yellow"></div>
+        </div>
+        <div
+          class="grid grid-cols-[repeat(2,1fr)] md:grid-cols-[repeat(3,1fr)] 3xl:grid-cols-[repeat(3,20.875rem)] gap-6"
+        >
+          <div class="venture-card">
+            <img
+              src="/src/assets/properties.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Properties"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Properties
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/restaurant.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Restaurant"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Restaurant & Bar
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/finance.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Finance"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">Finance</p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/hotel.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Hotels"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Hotel & Homestay
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/barber.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Barber Shop"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Barber Shop
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/chai.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Chai"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Chai Kaadai @ India
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/shows.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Shows"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Show & Entertainment
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/scrap.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Scrap Metal Recycle"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Scrap & Metal Recycle
+            </p>
+          </div>
+          <div class="venture-card">
+            <img
+              src="/src/assets/logistics.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Logistics"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">Logistics</p>
+          </div>
+          <div class="venture-card md:col-start-2">
+            <img
+              src="/src/assets/banquet.png"
+              class="w-13.25 h-12.5 md:w-26.5 md:h-25"
+              alt="Banquet Hall"
+            />
+            <p class="font-bold md:text-2xl/8.5 text-venture-text">
+              Banquet Hall
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact-us"
+        class="flex flex-col items-center max-3xl:gap-20 justify-between mx-8 md:mx-28.75 3xl:w-337.25 3xl:h-105 border-[5px] border-alternate-yellow rounded-[3rem] py-15 px-8 mb-24 lg:mb-80 3xl:mb-105"
+      >
+        <h3
+          class="uppercase text-[3.1875rem]/24 max-3xl:leading-13 font-[275] tracking-[-0.015] text-center text-primary-yellow"
+        >
+          join<br /><span
+            class="text-5xl/24 max-3xl:leading-14 tracking-normal font-bold"
+            >key global network co&#8209;operative berhad</span
+          >
+        </h3>
+        <a href="#home" class="btn btn-secondary"
+          >SUBMIT YOUR MEMBERSHIP REQUEST</a
+        >
+      </section>
+    </main>
+
+    <footer
+      class="flex max-md:flex-col justify-between items-center max-md:gap-20 max-md:py-12 md:px-28.75 bg-alternate-yellow text-lg/7 font-medium w-full 3xl:w-480"
+    >
+      <ul class="flex flex-col max-md:items-center gap-4">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#ventures">Our Venture</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+      <img
+        src="/src/assets/key-logo-white.png"
+        class="w-52.5 h-52.5 md:w-78 md:h-78 3xl:w-105 3xl:h-105"
+        alt="Key Global Logo"
+      />
+      <div class="text-center">
+        <p>+123 456 789</p>
+        <address class="not-italic mt-8">
+          03, Abc road,
+          <br />
+          Kuala Lumpur
+          <br />
+          Malaysia
+        </address>
+      </div>
+    </footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

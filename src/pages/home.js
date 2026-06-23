@@ -1,3 +1,10 @@
+import amplidiaIcon from "../assets/amplidia-icon.svg";
+import homeHeroImage from "../assets/img-home-hero.avif";
+import homeImage1 from "../assets/img-home-1.avif";
+import calendarIcon from "../assets/calendar.svg";
+import lineChartIcon from "../assets/line-chart.svg";
+
+
 export default function renderHome() {
   return `
   <div class="animate-fade-in">
@@ -8,7 +15,7 @@ export default function renderHome() {
             amplify your influence
           </p>
           <h1 class="text-text-1 -ml-2">
-            <img src="/src/assets/amplidia-icon.svg" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
+            <img src="${amplidiaIcon}" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
           </h1>
           <p class="text-body-lg-style text-text-2">
             We connect brands with creators that can reach the perfect
@@ -23,7 +30,7 @@ export default function renderHome() {
         </div>
 
         <div class="flex-1 max-sm:hidden">
-          <img src="./src/assets/img-home-hero.avif" alt="Hero Section Visual"
+          <img src="${homeHeroImage}" alt="Hero Section Visual"
             class="w-full aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
       </div>
@@ -33,7 +40,7 @@ export default function renderHome() {
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
-          <img src="./src/assets/img-home-1.avif" alt="About Us Section Visual"
+          <img src="${homeImage1}" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
 
@@ -64,7 +71,7 @@ export default function renderHome() {
 
         <div class="flex-1 grid grid-cols-1 gap-4">
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/calendar.svg" class="w-8 h-8" alt="Calendar Icon" />
+            <img src="${calendarIcon}" class="w-8 h-8" alt="Calendar Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Campaign Strategy & Management</h4>
               <p class="text-body-sm-style text-text-2">
@@ -74,7 +81,7 @@ export default function renderHome() {
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/line-chart.svg" class="w-8 h-8" alt="Line Chart Icon" />
+            <img src="${lineChartIcon}" class="w-8 h-8" alt="Line Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Analytics & Insights</h4>
               <p class="text-body-sm-style text-text-2">

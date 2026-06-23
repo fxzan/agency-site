@@ -1,4 +1,6 @@
 import alertIcon from "../assets/alert-circle.svg";
+import chevronLeft from "../assets/chevron-left.svg";
+import chevronRight from "../assets/chevron-right.svg";
 
 let autoAdvanceTimer = null;
 
@@ -11,6 +13,7 @@ export async function initPortfolio () {
     const campaigns = await response.json()
     const featured = campaigns.filter(c => c.featured)
 
+    slideBox.innerHTML = renderCarouselSlide(featured[0]);
     grid.innerHTML = campaigns.map(c => renderGridCard(c)).join('');
 
     initCarousel(featured, slideBox);
@@ -73,7 +76,7 @@ function renderCarouselSlide (campaignSlide) {
 
 function initCarousel (featuredCampaigns, slideContainer) {
   document.getElementById('carousel-dots').innerHTML = featuredCampaigns.map( (_, i) => `
-    <div class="dot w-2 h-2 rounded-full bg-border-soft transition-all duration-300 ease-in-out"></div>
+    <div class="dot w-${i === 0 ? '5' : '2'} h-2 rounded-full bg-${i === 0 ? 'accent' : 'border-soft'} transition-all duration-300 ease-in-out"></div>
   `).join('');
 
   const dotsArray = document.getElementById('carousel-dots').querySelectorAll('.dot');
@@ -122,7 +125,6 @@ function initCarousel (featuredCampaigns, slideContainer) {
     })
   })
 
-  navigateSlide(0);
   autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000);
 }
 
@@ -154,14 +156,14 @@ export default function renderPortfolio () {
 
         <div class="flex justify-between items-center gap-4 w-full">
           <button id="carousel-nav-prev" class="text-accent cursor-pointer">
-            <img src="./src/assets/chevron-left.svg" class="w-8 h-8" alt="Previous Campaign"/>
+            <img src="${chevronLeft}" class="w-8 h-8" alt="Previous Campaign"/>
           </button>
 
           <div id="carousel-dots" class="flex justify-center gap-2">
           </div>
 
           <button id="carousel-nav-next" class="text-accent cursor-pointer">
-            <img src="./src/assets/chevron-right.svg" class="w-8 h-8" alt="Next Campaign"/>
+            <img src="${chevronRight}" class="w-8 h-8" alt="Next Campaign"/>
           </button>
         </div>
       </div>

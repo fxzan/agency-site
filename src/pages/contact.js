@@ -1,5 +1,9 @@
 import successIcon from "../assets/check-circle.svg"
-import alertIcon from "../assets/alert-circle.svg"
+import alertIcon from "../assets/alert-circle.svg";
+import atSignIcon from "../assets/at-sign.svg";
+import phoneIcon from "../assets/phone.svg";
+import clockIcon from "../assets/clock.svg";
+import infoIcon from "../assets/info.svg";
 
 export function initContact() {
   const form = document.getElementById('contact-us-form');
@@ -148,7 +152,7 @@ export default function renderContact() {
       <div class="main-container flex max-sm:flex-col justify-between gap-16 py-24">
         <div class="flex-1 flex flex-col gap-5">
           <p class="text-overline-style text-accent sm:hidden">send us a message</p>
-          <form id=contact-us-form class="flex flex-col gap-2 p-7 bg-card border border-border rounded-2xl relative">
+          <form id="contact-us-form" class="flex flex-col gap-2 p-7 bg-card border border-border rounded-2xl relative">
             <label class="text-body-style text-text-2 mb-1">Name</label>
             <input name="name" type="text" placeholder="John Smith" class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"/>
             <label class="text-body-style text-text-2 mt-4 mb-1">Email</label>
@@ -169,25 +173,25 @@ export default function renderContact() {
           <div class="flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <div class="p-2 bg-accent/20 rounded-lg">
-                <img src="/src/assets/at-sign.svg" class="w-5 h-5"/>
+                <img src="${atSignIcon}" class="w-5 h-5" alt="@"/>
               </div>
               <a href="mailto:info@amplidia.com" target="_blank" class="text-body-style text-accent">info@amplidia.com</a>
             </div>
             <div class="flex items-center gap-4">
               <div class="p-2 bg-accent/20 rounded-lg">
-                <img src="/src/assets/phone.svg" class="w-5 h-5"/>
+                <img src="${phoneIcon}" class="w-5 h-5" alt="Phone"/>
               </div>
               <a href="https://wa.me/918861088019" target="_blank" class="text-body-style text-accent">+91 88610 88019</a>
             </div>
             <div class="flex items-center gap-4">
               <div class="p-2 bg-accent/20 rounded-lg">
-                <img src="/src/assets/clock.svg" class="w-5 h-5"/>
+                <img src="${clockIcon}" class="w-5 h-5" alt="Clock"/>
               </div>
               <p class="text-body-style text-text-2">Replies within 48 hours</p>
             </div>
           </div>
           <div class="bg-card border border-border rounded-xl px-7 py-4 flex max-md:flex-col max-md: self-center max-md:text-center gap-7 items-center mt-5">
-            <img src="./src/assets/info.svg" class="w-8 h-8" alt="Info Icon" />
+            <img src="${infoIcon}" class="w-8 h-8" alt="Info Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Your information stays private</h4>
               <p class="text-body-sm-style text-text-2">

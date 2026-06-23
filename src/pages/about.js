@@ -1,3 +1,10 @@
+import imgAbout from '../assets/img-about.avif';
+import heartIcon from '../assets/heart.svg';
+import barChartIcon from '../assets/bar-chart.svg';
+import usersIcon from '../assets/users.svg';
+import eyeIcon from '../assets/eye.svg';
+
+
 export default function renderAbout() {
   return `
   <div class="animate-fade-in">
@@ -20,7 +27,7 @@ export default function renderAbout() {
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
-          <img src="./src/assets/img-about.avif" alt="About Us Section Visual"
+          <img src="${imgAbout}" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
 
@@ -50,7 +57,7 @@ export default function renderAbout() {
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/heart.svg" class="w-8 h-8" alt="Heart Icon" />
+            <img src="${heartIcon}" class="w-8 h-8" alt="Heart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Authenticity first</h4>
               <p class="text-body-sm-style text-text-2">
@@ -60,7 +67,7 @@ export default function renderAbout() {
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/bar-chart.svg" class="w-8 h-8" alt="Bar Chart Icon" />
+            <img src="${barChartIcon}" class="w-8 h-8" alt="Bar Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Results that matter</h4>
               <p class="text-body-sm-style text-text-2">
@@ -70,7 +77,7 @@ export default function renderAbout() {
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/users.svg" class="w-8 h-8" alt="Users Icon" />
+            <img src="${usersIcon}" class="w-8 h-8" alt="Users Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Relationships over transactions</h4>
               <p class="text-body-sm-style text-text-2">
@@ -80,7 +87,7 @@ export default function renderAbout() {
           </div>
 
           <div class="feature-card flex gap-7 items-center">
-            <img src="./src/assets/eye.svg" class="w-8 h-8" alt="Eye Icon" />
+            <img src="${eyeIcon}" class="w-8 h-8" alt="Eye Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Transparency throughout</h4>
               <p class="text-body-sm-style text-text-2">

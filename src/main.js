@@ -108,13 +108,13 @@ document.addEventListener('click', (e) => {
   // It's an internal link — handle it ourselves
   e.preventDefault();
   history.pushState(null, '', link.href); // update the URL silently
-  navigate();                              // swap the page content
+  navigate().catch(console.error);                              // swap the page content
 });
 
 // ─── Handle back / forward buttons ───────────────────────────────────────────
 // pushState doesn't fire any event, but navigating history (back/forward)
 // fires 'popstate' — so we re-run navigate() when that happens.
-window.addEventListener('popstate', navigate);
+window.addEventListener('popstate', () => navigate().catch(console.error));
 
 // Run once on first load
-navigate();
+navigate().catch(console.error);

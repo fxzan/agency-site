@@ -1,3 +1,11 @@
+import servicesImg from "../assets/img-services.avif";
+import checkSquareIcon from "../assets/check-square.svg";
+import editIcon from "../assets/edit.svg";
+import calendarIcon from "../assets/calendar.svg"
+import gridIcon from "../assets/grid.svg";
+import usersIcon from "../assets/users.svg";
+import lineChartIcon from "../assets/line-chart.svg";
+
 export default function renderServices() {
   return `
   <div class="animate-fade-in">
@@ -25,7 +33,7 @@ export default function renderServices() {
           </p>
         </div>
         <div class="flex-1 flex justify-end items-center">
-          <img src="./src/assets/img-services.avif" alt="Services Section Visual"
+          <img src="${servicesImg}" alt="Services Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
       </div>
@@ -40,7 +48,7 @@ export default function renderServices() {
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/check-square.svg" class="w-8 h-8" alt="Check Box Ticked Icon" />
+            <img src="${checkSquareIcon}" class="w-8 h-8" alt="Check Box Ticked Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Strategic brand-influencer matching</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -57,7 +65,7 @@ export default function renderServices() {
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/edit.svg" class="w-8 h-8" alt="Edit Icon" />
+            <img src="${editIcon}" class="w-8 h-8" alt="Edit Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Influencer campaign strategy</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -72,7 +80,7 @@ export default function renderServices() {
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/calendar.svg" class="w-8 h-8" alt="Calendar Icon" />
+            <img src="${calendarIcon}" class="w-8 h-8" alt="Calendar Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Campaign management</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -88,7 +96,7 @@ export default function renderServices() {
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/grid.svg" class="w-8 h-8" alt="Grid Icon" />
+            <img src="${gridIcon}" class="w-8 h-8" alt="Grid Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">
                 Multi-platform campaign coordination
@@ -106,7 +114,7 @@ export default function renderServices() {
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/users.svg" class="w-8 h-8" alt="Users Icon" />
+            <img src="${usersIcon}" class="w-8 h-8" alt="Users Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Audience analytics & targeting</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -122,7 +130,7 @@ export default function renderServices() {
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="./src/assets/line-chart.svg" class="w-8 h-8" alt="Line Chart Icon" />
+            <img src="${lineChartIcon}" class="w-8 h-8" alt="Line Chart Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">
                 Performance analytics & growth insights

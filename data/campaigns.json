@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "campaignPath": "voxhall-rift-protocol",
+    "name": "Voxhall Rift Protocol",
+    "date": "May 2025",
+    "thumbUrl": "/images/campaign-voxhall.jpg",
+    "featured": true,
+    "description": "A global launch campaign spanning 12 creators across three platforms, driving awareness ahead of release.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "1.5M" },
+      { "metricName": "Engagements", "metricValue": "19.6K" },
+      { "metricName": "Engagement rate", "metricValue": "7.18%" }
+    ]
+  },
+  {
+    "id": 2,
+    "campaignPath": "lumiere-glow-drop",
+    "name": "Lumiere Glow Drop",
+    "date": "Jan 2025",
+    "thumbUrl": "/images/campaign-lumiere.jpg",
+    "featured": true,
+    "description": "A product launch for Lumiere's new serum line, built around eight skincare creators to drive trial and first-week sales.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "890K" },
+      { "metricName": "Engagements", "metricValue": "12.1K" },
+      { "metricName": "Engagement rate", "metricValue": "5.4%" }
+    ]
+  },
+  {
+    "id": 3,
+    "campaignPath": "kinetix-summer-surge",
+    "name": "Kinetix Summer Surge",
+    "date": "Jun 2024",
+    "thumbUrl": "/images/campaign-kinetix.jpg",
+    "featured": true,
+    "description": "A seasonal app-download push across fitness and lifestyle creators, timed to summer training routines.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "2.1M" },
+      { "metricName": "Engagements", "metricValue": "31.4K" },
+      { "metricName": "Engagement rate", "metricValue": "9.2%" }
+    ]
+  },
+  {
+    "id": 4,
+    "campaignPath": "cosset-morning-ritual",
+    "name": "Cosset Morning Ritual",
+    "date": "Mar 2024",
+    "thumbUrl": "/images/campaign-cosset.avif",
+    "featured": false,
+    "description": "A brand-awareness campaign introducing Cosset's subscription model through everyday morning-routine content.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "410K" },
+      { "metricName": "Engagements", "metricValue": "6.8K" },
+      { "metricName": "Engagement rate", "metricValue": "6.7%" }
+    ]
+  },
+  {
+    "id": 5,
+    "campaignPath": "fernweh-drop-04",
+    "name": "Fernweh Drop 04",
+    "date": "Feb 2024",
+    "thumbUrl": "/images/campaign-fernweh.jpg",
+    "featured": false,
+    "description": "A limited-release streetwear drop promoted through 15 fashion creators to build hype before sell-out.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "1.2M" },
+      { "metricName": "Engagements", "metricValue": "15.9K" },
+      { "metricName": "Engagement rate", "metricValue": "8.1%" }
+    ]
+  },
+  {
+    "id": 6,
+    "campaignPath": "haven-and-co-reset",
+    "name": "Haven & Co. Reset",
+    "date": "Apr 2023",
+    "thumbUrl": "/images/campaign-haven.jpg",
+    "featured": false,
+    "description": "A home-and-lifestyle campaign showcasing Haven & Co.'s new collection through styled, room-by-room creator content.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "670K" },
+      { "metricName": "Engagements", "metricValue": "8.3K" },
+      { "metricName": "Engagement rate", "metricValue": "4.9%" }
+    ]
+  },
+  {
+    "id": 7,
+    "campaignPath": "northbound-trailhead",
+    "name": "Northbound Trailhead",
+    "date": "Jul 2022",
+    "thumbUrl": "/images/campaign-northbound.jpg",
+    "featured": false,
+    "description": "An outdoor-adventure push pairing Northbound's new gear line with hiking and travel creators across long-form content.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "540K" },
+      { "metricName": "Engagements", "metricValue": "9.1K" },
+      { "metricName": "Engagement rate", "metricValue": "6.0%" }
+    ]
+  },
+  {
+    "id": 8,
+    "campaignPath": "auralis-soundcheck",
+    "name": "Auralis Soundcheck",
+    "date": "Sep 2021",
+    "thumbUrl": "/images/campaign-auralis.jpg",
+    "featured": false,
+    "description": "A product-review campaign for Auralis's new earbuds, focused on tech and music creators to build trust ahead of launch.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "980K" },
+      { "metricName": "Engagements", "metricValue": "14.7K" },
+      { "metricName": "Engagement rate", "metricValue": "7.5%" }
+    ]
+  },
+  {
+    "id": 9,
+    "campaignPath": "amberlane-family-table",
+    "name": "Amberlane Family Table",
+    "date": "Aug 2021",
+    "thumbUrl": "/images/campaign-amberlane.jpg",
+    "featured": false,
+    "description": "A recipe-led campaign with food and family creators, positioning Amberlane's cookware around shared mealtime moments.",
+    "metrics": [
+      { "metricName": "Views", "metricValue": "320K" },
+      { "metricName": "Engagements", "metricValue": "5.2K" },
+      { "metricName": "Engagement rate", "metricValue": "5.8%" }
+    ]
+  }
+]

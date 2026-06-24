@@ -2,7 +2,7 @@ import alertIcon from "../assets/alert-circle.svg";
 import chevronLeft from "../assets/chevron-left.svg";
 import chevronRight from "../assets/chevron-right.svg";
 
-import {trapFocus} from "../js/utils";
+import { trapFocus } from "../js/utils";
 
 let autoAdvanceTimer = null;
 
@@ -22,39 +22,81 @@ export async function initPortfolio() {
     </div>
     `
     const response = await fetch("/data/campaigns.json");
-    const campaigns = await response.json();
 
     if (!response.ok) throw new Error(response.status);
+
+    const campaigns = await response.json();
     
     const featured = campaigns.filter((c) => c.featured);
 
     slideBox.innerHTML = renderCarouselSlide(featured[0]);
-    grid.innerHTML = campaigns.map((c) => renderGridCard(c)).join("");
+    renderGrid(campaigns, grid);
 
-    grid.querySelectorAll('.grid-card').forEach(gridCard => {
-      gridCard.addEventListener('click', () => {
-        renderCampaignDetails(campaigns.find(c => c.campaignPath === gridCard.id))
-      })
+    grid.addEventListener('click', (e) => {
+      const gridCard = e.target.closest('.grid-card');
+
+      if (!gridCard) return;
+
+      renderCampaignDetails(campaigns.find(c => c.campaignPath === gridCard.id))
     })
 
     initCarousel(featured, slideBox);
   } catch (error) {
     console.log(error);
     const errorContent = `
-      <div class="min-h-100 animate-fade-in form-error flex flex-col gap-5 items-center justify-center rounded-2xl bg-card">
+      <div class="min-h-100 sm:col-span-2 md:col-span-3 animate-fade-in form-error flex flex-col gap-5 items-center justify-center rounded-2xl bg-card">
         <img src="${alertIcon}" class="w-10 h-10" alt="Alert Icon" />
         <h2 class="text-text-1 text-center">Campaigns not found</h2>
         <p class="text-body-style text-text-2 text-center">
           Failed to load campaigns
         </p>
         <p class="text-body-sm-style text-error text-center">
-          Error code: ${error.message}
+          Error: ${error.message}
         </p>
       </div>
     `;
     grid.innerHTML = errorContent;
     slideBox.innerHTML = errorContent;
   }
+}
+
+function renderGridCard(gridCampaign) {
+  return `
+    <div id="${gridCampaign.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
+      <img src="${gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${gridCampaign.name} Image" />
+      <div class="flex flex-col gap-3 px-4 pb-4">
+        <h4 class="text-text-1">${gridCampaign.name}</h4>
+        <p class="text-caption text-accent">
+          ${gridCampaign.date}
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+function renderGrid(allCampaigns, grid) {
+  let indexLast = 0 
+  
+  grid.innerHTML = allCampaigns.slice(indexLast, indexLast + 6).map((c) => renderGridCard(c)).join('');
+  indexLast += 6;
+
+  function showMoreCampaigns() {
+    grid.insertAdjacentHTML('beforeend', allCampaigns.slice(indexLast, indexLast + 6).map((c) => renderGridCard(c)).join(''));
+    indexLast += 6;
+    
+    if (indexLast >= allCampaigns.length) {
+      document.getElementById('see-more-campaigns-button').remove()
+    }
+  }
+
+  if (allCampaigns.length > 6) {
+    grid.insertAdjacentHTML('afterend', `
+      <button id="see-more-campaigns-button" class="btn btn-ghost self-end">See more →</button>
+    `);
+    
+    document.getElementById('see-more-campaigns-button').addEventListener('click', showMoreCampaigns);
+  }
+
 }
 
 function renderCampaignDetails(campaign) {
@@ -126,20 +168,6 @@ function renderCampaignDetails(campaign) {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeCampaign();
   }, { signal })
-}
-
-function renderGridCard(gridCampaign) {
-  return `
-    <div id="${gridCampaign.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer">
-      <img src="${gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-accent object-cover object-center" alt="${gridCampaign.name} Image" />
-      <div class="flex flex-col gap-3 px-4 pb-4">
-        <h4 class="text-text-1">${gridCampaign.name}</h4>
-        <p class="text-caption text-accent">
-          ${gridCampaign.date}
-        </p>
-      </div>
-    </div>
-  `;
 }
 
 function renderCarouselSlide(campaignSlide) {
@@ -238,6 +266,7 @@ function initCarousel(featuredCampaigns, slideContainer) {
 export function destroyPortfolio() {
   clearInterval(autoAdvanceTimer);
   autoAdvanceTimer = null;
+  document.getElementById('see-more-campaigns-button')?.remove();
 }
 
 export default function renderPortfolio() {
@@ -262,15 +291,15 @@ export default function renderPortfolio() {
         </div>
 
         <div class="flex justify-between items-center gap-4 w-full">
-          <button id="carousel-nav-prev" class="text-accent cursor-pointer">
-            <img src="${chevronLeft}" class="w-8 h-8" alt="Previous Campaign" aria-label="Previous Campaign"/>
+          <button id="carousel-nav-prev" class="text-accent cursor-pointer" aria-label="Previous Campaign">
+            <img src="${chevronLeft}" class="w-8 h-8" alt="Previous Campaign" />
           </button>
 
           <div id="carousel-dots" class="flex justify-center gap-2">
           </div>
 
-          <button id="carousel-nav-next" class="text-accent cursor-pointer">
-            <img src="${chevronRight}" class="w-8 h-8" alt="Next Campaign" aria-label="Next Campaign"/>
+          <button id="carousel-nav-next" class="text-accent cursor-pointer" aria-label="Next Campaign">
+            <img src="${chevronRight}" class="w-8 h-8" alt="Next Campaign" />
           </button>
         </div>
       </div>

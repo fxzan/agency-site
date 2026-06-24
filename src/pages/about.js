@@ -27,7 +27,7 @@ export default function renderAbout() {
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
         <div class="flex-1 flex items-center">
           <img src="${imgAbout}" alt="About Us Section Visual"
-            class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
+            class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
         </div>
 
         <div class="flex-1 flex flex-col items-start gap-5">

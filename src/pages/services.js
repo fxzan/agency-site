@@ -34,7 +34,7 @@ export default function renderServices() {
         </div>
         <div class="flex-1 flex justify-end items-center">
           <img src="${servicesImg}" alt="Services Section Visual"
-            class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
+            class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
         </div>
       </div>
     </section>

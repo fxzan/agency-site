@@ -3,9 +3,10 @@ import alertIcon from "../assets/alert-circle.svg"
 export default async function renderPrivacyPolicy() {
   try {
     const response = await fetch("/data/privacy.html");
-    const html = await response.text();
     
     if (!response.ok) throw new Error(response.status);
+
+    const html = await response.text();
 
     return html;
   } catch(error) {
@@ -26,7 +27,7 @@ export default async function renderPrivacyPolicy() {
         <p class="text-body-style text-text-2 text-center">
           Failed to load the privacy policy
         </p>
-        <p class="text-body-sm-style text-error text-center">Error code: ${error.message}</p>
+        <p class="text-body-sm-style text-error text-center">Error: ${error.message}</p>
       </div>
     `
   }

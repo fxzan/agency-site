@@ -34,7 +34,7 @@
 </head>
 
 <body class="flex flex-col justify-between bg-page-bg pt-15 min-h-screen">
-  <div id="initial-loader" style="
+  <div id="initial-loader" role="status" aria-busy="true" aria-label="Loading" style="
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,7 +51,7 @@
           border: 2px solid #4da6ff;
           border-top-color: transparent;
           border-radius: 50%;
-          animation: spin 0.7s linear infinite;
+          animation: spin 1s linear infinite;
         "></div>
   </div>
 
@@ -59,7 +59,7 @@
     class="h-screen w-screen bg-black/40 opacity-0 fixed top-0 z-50 pointer-events-none invisible transition-opacity duration-300">
   </div>
 
-  <main id="app-container" class="bg-surface"></main>
+  <main id="app-container" class="bg-surface relative"></main>
 
   <script type="module" src="/src/main.js"></script>
 </body>

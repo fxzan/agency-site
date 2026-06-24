@@ -166,12 +166,12 @@ export default function renderContact() {
         <div class="flex-1 flex flex-col gap-5">
           <p class="text-overline-style text-accent sm:hidden">send us a message</p>
           <form id="contact-us-form" class="flex flex-col gap-2 p-7 bg-card border border-border rounded-2xl relative">
-            <label class="text-body-style text-text-2 mb-1">Name</label>
-            <input name="name" type="text" placeholder="John Smith" class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"/>
-            <label class="text-body-style text-text-2 mt-4 mb-1">Email</label>
-            <input name="email" type="text" placeholder="john@email.com" class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"/>
-            <label class="text-body-style text-text-2 mt-4 mb-1">Message</label>
-            <textarea name="message" rows="4" placeholder="Tell us what you're working on..." class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"></textarea>
+            <label for="contact-name" class="text-body-style text-text-2 mb-1">Name</label>
+            <input id="contact-name" name="name" type="text" placeholder="John Smith" class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"/>
+            <label for="contact-email" class="text-body-style text-text-2 mt-4 mb-1">Email</label>
+            <input id="contact-email" name="email" type="text" placeholder="john@email.com" class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"/>
+            <label for="contact-message" class="text-body-style text-text-2 mt-4 mb-1">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell us what you're working on..." class="text-body-lg-style text-text-1 border border-border bg-surface rounded-lg px-3 py-2"></textarea>
             <div class="h-captcha self-center my-4" id="hcaptcha-widget"></div>
             <button type="submit" class="btn btn-primary self-center">Submit</button>
           </form>

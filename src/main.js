@@ -57,10 +57,18 @@ async function navigate() {
     history.replaceState(null, "", "/");
   }
 
+  appContainer.innerHTML = `
+    <div id="initial-loader" role="status" aria-busy="true" aria-label="Loading"
+      class="flex justify-center items-center fixed inset-0 z-60 bg-page-bg h-screen pb-15"
+      >
+      <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  `
+
   const renderPage = routes[path] ?? render404;
   document.title = titles[path] ?? "404 | Amplidia";
 
-  appContainer.innerHTML = renderPage();
+  appContainer.innerHTML = await renderPage();
   if (path === "/contact") initContact();
 
   if (path === "/portfolio") await initPortfolio();

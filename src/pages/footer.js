@@ -64,7 +64,7 @@ export default function renderFooter() {
       </div>
       
       <div class="dark text-caption/caption text-text-3 text-center border-t border-border w-full py-4">
-        © Amplidia Media 2025. All rights reserved.
+        © Amplidia Media ${new Date().getFullYear()}. All rights reserved.
       </div>
     </footer>
   `;

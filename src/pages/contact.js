@@ -80,17 +80,17 @@ function validateForm(form) {
 function validateInputField(inputField) {
   clearFieldError(inputField); // clear if existing field error
   const value = inputField.value.trim();
-  if (!value || value.length < 5) {
-    showFieldError(
-      inputField,
-      "Please fill out this field with at least 5 characters",
-    );
-    return false;
-  } else if (
+  if (
     inputField.getAttribute("name") === "email" &&
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
   ) {
     showFieldError(inputField, "Please enter a valid email");
+    return false;
+  } else if (!value || value.length < 5) {
+    showFieldError(
+      inputField,
+      "Please fill out this field with at least 5 characters",
+    );
     return false;
   }
   return true;

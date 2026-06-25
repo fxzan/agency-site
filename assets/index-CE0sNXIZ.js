@@ -1,4 +1,4 @@
-(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=`/agency-site/`.replace(/\/$/,``);function t(e,t){let n=e.querySelectorAll(`a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])`),r=n[0],i=n[n.length-1];r?.focus(),e.addEventListener(`keydown`,e=>{e.key===`Tab`&&(e.shiftKey?document.activeElement===r&&(e.preventDefault(),i?.focus()):document.activeElement===i&&(e.preventDefault(),r?.focus()))},{signal:t})}function n(){let e=localStorage.getItem(`theme`),t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(e===`system`||!e?t?`dark`:`light`:e)===`dark`&&document.documentElement.classList.add(`dark`),e||localStorage.setItem(`theme`,`system`);function n(e){let t=document.getElementById(`theme-toggle-icon`);t&&(e?(t.classList.add(`text-on-accent`,`bg-accent`),t.classList.remove(`bg-white/10`)):(t.classList.remove(`text-on-accent`,`bg-accent`),t.classList.add(`bg-white/10`)))}function r(){let e=document.documentElement.classList.toggle(`dark`);localStorage.setItem(`theme`,e?`dark`:`light`),n(e)}document.getElementById(`theme-toggle-icon`).addEventListener(`click`,r),n(document.documentElement.classList.contains(`dark`))}var r=`/agency-site/assets/amplidia-icon-CZAfZn02.svg`;function i(){let e=document.getElementById(`burger-button`),t=document.getElementById(`close-burger-button`),n=document.getElementById(`burger-nav-links`),r=document.getElementById(`overlay`);function i(){n.classList.add(`max-sm:-translate-x-45`),e.classList.add(`opacity-0`),r.classList.remove(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.add(`overflow-hidden`)}function a(){n.classList.remove(`max-sm:-translate-x-45`),e.classList.remove(`opacity-0`),r.classList.add(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.remove(`overflow-hidden`)}e.addEventListener(`click`,i),t.addEventListener(`click`,a),r.addEventListener(`click`,a),n.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,a)})}function a(){return`
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();function e(e,t){let n=e.querySelectorAll(`a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])`),r=n[0],i=n[n.length-1];r?.focus(),e.addEventListener(`keydown`,e=>{e.key===`Tab`&&(e.shiftKey?document.activeElement===r&&(e.preventDefault(),i?.focus()):document.activeElement===i&&(e.preventDefault(),r?.focus()))},{signal:t})}var t=`/agency-site/`.replace(/\/$/,``);function n(){let e=localStorage.getItem(`theme`),t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(e===`system`||!e?t?`dark`:`light`:e)===`dark`&&document.documentElement.classList.add(`dark`),e||localStorage.setItem(`theme`,`system`);function n(e){let t=document.getElementById(`theme-toggle-icon`);t&&(e?(t.classList.add(`text-on-accent`,`bg-accent`),t.classList.remove(`bg-white/10`)):(t.classList.remove(`text-on-accent`,`bg-accent`),t.classList.add(`bg-white/10`)))}function r(){let e=document.documentElement.classList.toggle(`dark`);localStorage.setItem(`theme`,e?`dark`:`light`),n(e)}document.getElementById(`theme-toggle-icon`).addEventListener(`click`,r),n(document.documentElement.classList.contains(`dark`))}var r=`/agency-site/assets/amplidia-icon-CZAfZn02.svg`;function i(){let e=document.getElementById(`burger-button`),t=document.getElementById(`close-burger-button`),n=document.getElementById(`burger-nav-links`),r=document.getElementById(`overlay`);function i(){n.classList.add(`max-sm:-translate-x-45`),e.classList.add(`opacity-0`),r.classList.remove(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.add(`overflow-hidden`)}function a(){n.classList.remove(`max-sm:-translate-x-45`),e.classList.remove(`opacity-0`),r.classList.add(`pointer-events-none`,`opacity-0`,`invisible`),document.body.classList.remove(`overflow-hidden`)}e.addEventListener(`click`,i),t.addEventListener(`click`,a),r.addEventListener(`click`,a),n.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,a)})}function a(){return`
     <header class="fixed top-0 left-0 flex items-center bg-page-bg border-b border-[#d0d8e430] w-full h-15 z-100">
       <div class="dark main-container">
         <nav class="flex gap-8 justify-between items-center">
@@ -12,7 +12,7 @@
 
             <!--------------------------------------------- Menu close button - hidden on large screens -------------------->
             <li><button aria-label="Close Menu" id="close-burger-button"
-              class="flex flex-col gap-1.5 cursor-pointer absolute top-6 sm:hidden">
+              class="flex flex-col gap-1.5 cursor-pointer absolute top-6 right-8 sm:hidden">
               <span class="w-6 h-0.5 bg-accent translate-y-1 rotate-45"></span>
               <span class="w-6 h-0.5 bg-accent -translate-y-1 -rotate-45"></span>
             </button></li>
@@ -263,7 +263,7 @@
       </div>
     </section>
   </div>
-  `}var h=`/agency-site/assets/img-about-BVfH1H8d.avif`,g=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20.84%204.61a5.5%205.5%200%200%200-7.78%200L12%205.67l-1.06-1.06a5.5%205.5%200%200%200-7.78%207.78l1.06%201.06L12%2021.23l7.78-7.78%201.06-1.06a5.5%205.5%200%200%200%200-7.78z'%3e%3c/path%3e%3c/svg%3e`,_=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='4'%20stroke-linecap='square'%20stroke-linejoin='bevel'%3e%3cline%20x1='18'%20y1='20'%20x2='18'%20y2='10'%3e%3c/line%3e%3cline%20x1='12'%20y1='20'%20x2='12'%20y2='4'%3e%3c/line%3e%3cline%20x1='6'%20y1='20'%20x2='6'%20y2='14'%3e%3c/line%3e%3c/svg%3e`,v=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M17%2021v-2a4%204%200%200%200-4-4H5a4%204%200%200%200-4%204v2'%3e%3c/path%3e%3ccircle%20cx='9'%20cy='7'%20r='4'%3e%3c/circle%3e%3cpath%20d='M23%2021v-2a4%204%200%200%200-3-3.87'%3e%3c/path%3e%3cpath%20d='M16%203.13a4%204%200%200%201%200%207.75'%3e%3c/path%3e%3c/svg%3e`,y=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M1%2012s4-8%2011-8%2011%208%2011%208-4%208-11%208-11-8-11-8z'%3e%3c/path%3e%3ccircle%20cx='12'%20cy='12'%20r='3'%3e%3c/circle%3e%3c/svg%3e`;function b(){return`
+  `}var h=`/agency-site/assets/img-about-BVfH1H8d.avif`,g=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20.84%204.61a5.5%205.5%200%200%200-7.78%200L12%205.67l-1.06-1.06a5.5%205.5%200%200%200-7.78%207.78l1.06%201.06L12%2021.23l7.78-7.78%201.06-1.06a5.5%205.5%200%200%200%200-7.78z'%3e%3c/path%3e%3c/svg%3e`,_=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='4'%20stroke-linecap='square'%20stroke-linejoin='bevel'%3e%3cline%20x1='18'%20y1='20'%20x2='18'%20y2='10'%3e%3c/line%3e%3cline%20x1='12'%20y1='20'%20x2='12'%20y2='4'%3e%3c/line%3e%3cline%20x1='6'%20y1='20'%20x2='6'%20y2='14'%3e%3c/line%3e%3c/svg%3e`,v=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M17%2021v-2a4%204%200%200%200-4-4H5a4%204%200%200%200-4%204v2'%3e%3c/path%3e%3ccircle%20cx='9'%20cy='7'%20r='4'%3e%3c/circle%3e%3cpath%20d='M23%2021v-2a4%204%200%200%200-3-3.87'%3e%3c/path%3e%3cpath%20d='M16%203.13a4%204%200%200%201%200%207.75'%3e%3c/path%3e%3c/svg%3e`,y=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M1%2012s4-8%2011-8%2011%208%2011%208-4%208-11%208-11-8-11-8z'%3e%3c/path%3e%3ccircle%20cx='12'%20cy='12'%20r='3'%3e%3c/circle%3e%3c/svg%3e`;function ee(){return`
   <div class="bg-surface animate-fade-in">
     <!----------------------------------------------- Hero area ------------------------------------------------------->
     <section id="head-section" class="bg-page-bg border-b border-border">
@@ -373,7 +373,7 @@
       </div>
     </section>
   </div>
-  `}var x=`/agency-site/assets/img-services-BMxHTjW3.avif`,ee=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpolyline%20points='9%2011%2012%2014%2022%204'%3e%3c/polyline%3e%3cpath%20d='M21%2012v7a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2h11'%3e%3c/path%3e%3c/svg%3e`,te=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20%2014.66V20a2%202%200%200%201-2%202H4a2%202%200%200%201-2-2V6a2%202%200%200%201%202-2h5.34'%3e%3c/path%3e%3cpolygon%20points='18%202%2022%206%2012%2016%208%2016%208%2012%2018%202'%3e%3c/polygon%3e%3c/svg%3e`,ne=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='3'%20y='3'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='14'%20y='3'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='14'%20y='14'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='3'%20y='14'%20width='7'%20height='7'%3e%3c/rect%3e%3c/svg%3e`;function re(){return`
+  `}var te=`/agency-site/assets/img-services-BMxHTjW3.avif`,ne=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpolyline%20points='9%2011%2012%2014%2022%204'%3e%3c/polyline%3e%3cpath%20d='M21%2012v7a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2h11'%3e%3c/path%3e%3c/svg%3e`,re=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M20%2014.66V20a2%202%200%200%201-2%202H4a2%202%200%200%201-2-2V6a2%202%200%200%201%202-2h5.34'%3e%3c/path%3e%3cpolygon%20points='18%202%2022%206%2012%2016%208%2016%208%2012%2018%202'%3e%3c/polygon%3e%3c/svg%3e`,ie=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3crect%20x='3'%20y='3'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='14'%20y='3'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='14'%20y='14'%20width='7'%20height='7'%3e%3c/rect%3e%3crect%20x='3'%20y='14'%20width='7'%20height='7'%3e%3c/rect%3e%3c/svg%3e`;function b(){return`
   <div class="bg-surface animate-fade-in">
     <!-------------------------------------------------- Hero area -------------------------------------------------------->
     <section id="head-section" class="bg-page-bg border-b border-border">
@@ -404,7 +404,7 @@
 
         <!-------------------------------------------------- Image -------------------------------------------------------->
         <div class="flex-1 flex justify-end items-center">
-          <img src="${x}" alt="Services Section Visual"
+          <img src="${te}" alt="Services Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
         </div>
       </div>
@@ -421,7 +421,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <!-------------------------------------------------- Card grid -------------------------------------------------->
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${ee}" class="w-8 h-8" alt="Check Box Ticked Icon" />
+            <img src="${ne}" class="w-8 h-8" alt="Check Box Ticked Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Strategic brand-influencer matching</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -438,7 +438,7 @@
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${te}" class="w-8 h-8" alt="Edit Icon" />
+            <img src="${re}" class="w-8 h-8" alt="Edit Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">Influencer campaign strategy</h4>
               <p class="text-body-sm-style text-text-2 mb-2">
@@ -469,7 +469,7 @@
           </div>
 
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
-            <img src="${ne}" class="w-8 h-8" alt="Grid Icon" />
+            <img src="${ie}" class="w-8 h-8" alt="Grid Icon" />
             <div class="flex flex-col gap-3">
               <h4 class="text-text-1">
                 Multi-platform campaign coordination
@@ -533,38 +533,38 @@
       </div>
     </section>
   </div>
-  `}var S=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23d0021b'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='8'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='16'%20x2='12.01'%20y2='16'%3e%3c/line%3e%3c/svg%3e`,C=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M15%2018l-6-6%206-6'/%3e%3c/svg%3e`,w=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M9%2018l6-6-6-6'/%3e%3c/svg%3e`,T=null;async function E(){let t=document.getElementById(`campaigns-grid`),n=document.getElementById(`carousel-slide`);n.innerHTML=`
+  `}var x=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23d0021b'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='8'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='16'%20x2='12.01'%20y2='16'%3e%3c/line%3e%3c/svg%3e`,S=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M15%2018l-6-6%206-6'/%3e%3c/svg%3e`,C=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M9%2018l6-6-6-6'/%3e%3c/svg%3e`,w=null;async function T(){let e=document.getElementById(`campaigns-grid`),n=document.getElementById(`carousel-slide`);n.innerHTML=`
     <div class="flex justify-center py-44">
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-  `,t.innerHTML=`
+  `,e.innerHTML=`
     <div class="col-span-3 flex justify-center py-12">
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-  `;try{let r=await fetch(`${e}/data/campaigns.json`);if(!r.ok)throw Error(r.status);let i=await r.json(),a=i.filter(e=>e.featured);n.innerHTML=A(a[0]),O(i,t),t.addEventListener(`click`,e=>{let t=e.target.closest(`.grid-card`);t&&k(i.find(e=>e.campaignPath===t.id))}),j(a,n)}catch(e){console.log(e);let r=`
+  `;try{let r=await fetch(`${t}/data/campaigns.json`);if(!r.ok)throw Error(r.status);let i=await r.json(),a=i.filter(e=>e.featured);n.innerHTML=k(a[0]),D(i,e),e.addEventListener(`click`,e=>{let t=e.target.closest(`.grid-card`);t&&O(i.find(e=>e.campaignPath===t.id))}),A(a,n)}catch(t){console.log(t);let r=`
       <div class="min-h-100 sm:col-span-2 md:col-span-3 animate-fade-in form-error flex flex-col gap-5 items-center justify-center rounded-2xl bg-card">
-        <img src="${S}" class="w-10 h-10" alt="Alert Icon" />
+        <img src="${x}" class="w-10 h-10" alt="Alert Icon" />
         <h2 class="text-text-1 text-center">Campaigns not found</h2>
         <p class="text-body-style text-text-2 text-center">
           Failed to load campaigns
         </p>
         <p class="text-body-sm-style text-error text-center">
-          Error: ${e.message}
+          Error: ${t.message}
         </p>
       </div>
-    `;t.innerHTML=r,n.innerHTML=r}}function D(t){return`
-    <div id="${t.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
-      <img src="${e+t.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${t.name} Image" />
+    `;e.innerHTML=r,n.innerHTML=r}}function E(e){return`
+    <div id="${e.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
+      <img src="${t+e.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${e.name} Image" />
       <div class="flex flex-col gap-3 px-4 pb-4">
-        <h4 class="text-text-1">${t.name}</h4>
+        <h4 class="text-text-1">${e.name}</h4>
         <p class="text-caption text-accent">
-          ${t.date}
+          ${e.date}
         </p>
       </div>
     </div>
-  `}function O(e,t){let n=0;t.innerHTML=e.slice(n,n+6).map(e=>D(e)).join(``),n+=6;function r(){t.insertAdjacentHTML(`beforeend`,e.slice(n,n+6).map(e=>D(e)).join(``)),n+=6,n>=e.length&&document.getElementById(`see-more-campaigns-button`).remove()}e.length>6&&(t.insertAdjacentHTML(`afterend`,`
+  `}function D(e,t){let n=0;t.innerHTML=e.slice(n,n+6).map(e=>E(e)).join(``),n+=6;function r(){t.insertAdjacentHTML(`beforeend`,e.slice(n,n+6).map(e=>E(e)).join(``)),n+=6,n>=e.length&&document.getElementById(`see-more-campaigns-button`).remove()}e.length>6&&(t.insertAdjacentHTML(`afterend`,`
       <button id="see-more-campaigns-button" class="btn btn-ghost self-end">See more →</button>
-    `),document.getElementById(`see-more-campaigns-button`).addEventListener(`click`,r))}function k(n){document.getElementById(`carousel-backdrop`)?.remove(),document.getElementById(`carousel-details`)?.remove();let r=`
+    `),document.getElementById(`see-more-campaigns-button`).addEventListener(`click`,r))}function O(n){document.getElementById(`carousel-backdrop`)?.remove(),document.getElementById(`carousel-details`)?.remove();let r=`
     <div id="carousel-backdrop"
       class="h-screen w-screen bg-black/50 fixed inset-0 z-60 transition-opacity duration-300 ease-out">
     </div>
@@ -576,7 +576,7 @@
       </button>
       <div class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7">
         <div class="flex-1 flex items-center">
-          <img src="${e+n.thumbUrl}" alt="${n.name} Image"
+          <img src="${t+n.thumbUrl}" alt="${n.name} Image"
             class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
         <div class="flex-1 flex flex-col items-start gap-5">
@@ -598,20 +598,20 @@
         </div>
       </div>
     </div>
-  `;document.getElementById(`app-container`).insertAdjacentHTML(`beforebegin`,r);let i=new AbortController,{signal:a}=i,o=document.getElementById(`carousel-backdrop`),s=document.getElementById(`carousel-details`);document.body.classList.add(`overflow-hidden`),t(s,a);function c(){o.classList.add(`opacity-0`),s.classList.remove(`animate-fade-in`),s.classList.add(`animate-fade-out`,`opacity-0`),i.abort(),setTimeout(()=>{s.remove(),o.remove(),document.body.classList.remove(`overflow-hidden`)},300)}o.addEventListener(`click`,c,{signal:a}),document.getElementById(`close-campaign-details`).addEventListener(`click`,c,{signal:a}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&c()},{signal:a})}function A(t){return`
+  `;document.getElementById(`app-container`).insertAdjacentHTML(`beforebegin`,r);let i=new AbortController,{signal:a}=i,o=document.getElementById(`carousel-backdrop`),s=document.getElementById(`carousel-details`);document.body.classList.add(`overflow-hidden`),e(s,a);function c(){o.classList.add(`opacity-0`),s.classList.remove(`animate-fade-in`),s.classList.add(`animate-fade-out`,`opacity-0`),i.abort(),setTimeout(()=>{s.remove(),o.remove(),document.body.classList.remove(`overflow-hidden`)},300)}o.addEventListener(`click`,c,{signal:a}),document.getElementById(`close-campaign-details`).addEventListener(`click`,c,{signal:a}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&c()},{signal:a})}function k(e){return`
     <div class="flex-1 flex items-center">
-      <img src="${e+t.thumbUrl}" alt="${t.name} Image"
+      <img src="${t+e.thumbUrl}" alt="${e.name} Image"
         class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
     </div>
 
     <div class="flex-1 flex flex-col items-start gap-5">
-      <p class="text-overline-style text-accent">${t.date}</p>
-      <h2 class="text-text-1">${t.name}</h2>
+      <p class="text-overline-style text-accent">${e.date}</p>
+      <h2 class="text-text-1">${e.name}</h2>
       <p class="text-body-style text-text-2">
-        ${t.description}
+        ${e.description}
       </p>
       <div class="flex flex-wrap gap-6">
-        ${t.metrics.map(e=>`
+        ${e.metrics.map(e=>`
           <div class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-lg">
             <p class="font-display text-heading-2/heading-2 font-bold text-accent">
               ${e.metricValue}
@@ -621,9 +621,9 @@
         `).join(``)}
       </div>  
     </div>
-  `}function j(e,t){document.getElementById(`carousel-dots`).innerHTML=e.map((e,t)=>`
+  `}function A(e,t){document.getElementById(`carousel-dots`).innerHTML=e.map((e,t)=>`
     <div class="dot w-${t===0?`5`:`2`} h-2 rounded-full bg-${t===0?`accent`:`border-soft`} transition-all duration-300 ease-in-out"></div>
-  `).join(``);let n=document.getElementById(`carousel-dots`).querySelectorAll(`.dot`),r=0;function i(i){r=(i+e.length)%e.length,t.classList.add(`opacity-0`),setTimeout(()=>{t.innerHTML=A(e[r]),t.classList.remove(`opacity-0`)},600),n.forEach((e,t)=>{t===r?(e.classList.add(`w-5`,`bg-accent`),e.classList.remove(`w-2`,`bg-border-soft`)):(e.classList.remove(`w-5`,`bg-accent`),e.classList.add(`w-2`,`bg-border-soft`))})}function a(){clearInterval(T),T=setInterval(()=>i(r+1),5e3)}document.getElementById(`carousel-nav-prev`).addEventListener(`click`,()=>{i(r-1),a()}),document.getElementById(`carousel-nav-next`).addEventListener(`click`,()=>{i(r+1),a()}),n.forEach((e,t)=>{e.addEventListener(`click`,()=>{i(t),a()})}),T=setInterval(()=>i(r+1),5e3)}function M(){clearInterval(T),T=null,document.getElementById(`see-more-campaigns-button`)?.remove(),document.getElementById(`carousel-details`)?.remove(),document.getElementById(`carousel-backdrop`)?.remove(),document.body.classList.remove(`overflow-hidden`)}function N(){return`
+  `).join(``);let n=document.getElementById(`carousel-dots`).querySelectorAll(`.dot`),r=0;function i(i){r=(i+e.length)%e.length,t.classList.add(`opacity-0`),setTimeout(()=>{t.innerHTML=k(e[r]),t.classList.remove(`opacity-0`)},600),n.forEach((e,t)=>{t===r?(e.classList.add(`w-5`,`bg-accent`),e.classList.remove(`w-2`,`bg-border-soft`)):(e.classList.remove(`w-5`,`bg-accent`),e.classList.add(`w-2`,`bg-border-soft`))})}function a(){clearInterval(w),w=setInterval(()=>i(r+1),5e3)}document.getElementById(`carousel-nav-prev`).addEventListener(`click`,()=>{i(r-1),a()}),document.getElementById(`carousel-nav-next`).addEventListener(`click`,()=>{i(r+1),a()}),n.forEach((e,t)=>{e.addEventListener(`click`,()=>{i(t),a()})}),w=setInterval(()=>i(r+1),5e3)}function j(){clearInterval(w),w=null,document.getElementById(`see-more-campaigns-button`)?.remove(),document.getElementById(`carousel-details`)?.remove(),document.getElementById(`carousel-backdrop`)?.remove(),document.body.classList.remove(`overflow-hidden`)}function M(){return`
   <div class="bg-surface animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 items-center pt-14 pb-12">
@@ -645,14 +645,14 @@
 
         <div class="flex justify-between items-center gap-4 w-full">
           <button id="carousel-nav-prev" class="text-accent cursor-pointer" aria-label="Previous Campaign">
-            <img src="${C}" class="w-8 h-8" alt="Previous Campaign" />
+            <img src="${S}" class="w-8 h-8" alt="Previous Campaign" />
           </button>
 
           <div id="carousel-dots" class="flex justify-center gap-2">
           </div>
 
           <button id="carousel-nav-next" class="text-accent cursor-pointer" aria-label="Next Campaign">
-            <img src="${w}" class="w-8 h-8" alt="Next Campaign" />
+            <img src="${C}" class="w-8 h-8" alt="Next Campaign" />
           </button>
         </div>
       </div>
@@ -681,20 +681,20 @@
         <a href="/contact" class="btn btn-primary">Get in touch</a>
       </div>
     </section>
-  </div>`}async function P(){let t=document.getElementById(`privacy-policy-content`);t.innerHTML=`
+  </div>`}async function N(){let e=document.getElementById(`privacy-policy-content`);e.innerHTML=`
     <div class="col-span-3 flex justify-center h-full py-36">
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-  `;try{let n=await fetch(`${e}/data/privacy.html`);if(!n.ok)throw Error(n.status);t.innerHTML=await n.text()}catch(e){console.log(e),t.innerHTML=`
+  `;try{let n=await fetch(`${t}/data/privacy.html`);if(!n.ok)throw Error(n.status);e.innerHTML=await n.text(),P()}catch(t){console.log(t),e.innerHTML=`
       <div class="min-h-100 animate-fade-in form-error flex flex-col gap-5 items-center justify-center rounded-2xl">
-        <img src="${S}" class="w-10 h-10" alt="Alert Icon" />
+        <img src="${x}" class="w-10 h-10" alt="Alert Icon" />
         <h2 class="text-text-1 text-center">Privacy policy not found</h2>
         <p class="text-body-style text-text-2 text-center">
           Failed to load the privacy policy
         </p>
-        <p class="text-body-sm-style text-error text-center">Error: ${e.message}</p>
+        <p class="text-body-sm-style text-error text-center">Error: ${t.message}</p>
       </div>
-    `}}function F(){return`
+    `}}function P(){let e=document.querySelectorAll(`#privacy-sidebar-nav a[data-hash]`),t=Array.from(e).map(e=>document.getElementById(e.dataset.hash)).filter(Boolean);function n(t){e.forEach(e=>{e.dataset.hash===t?e.classList.add(`active`):e.classList.remove(`active`)})}let r=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&n(e.target.id)})},{rootMargin:`-10% 0px -80% 0px`,threshold:0});t.forEach(e=>r.observe(e)),e.forEach(e=>{e.addEventListener(`click`,()=>{n(e.dataset.hash)})})}function F(){return`
     <div class="bg-surface animate-fade-in">
       <section id="head-section" class="bg-page-bg border-b border-border">
         <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-14 pb-12">
@@ -710,11 +710,11 @@
       </section>
 
     </div>
-  `}var I=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23047857'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2011.08V12a10%2010%200%201%201-5.93-9.14'%3e%3c/path%3e%3cpolyline%20points='22%204%2012%2014.01%209%2011.01'%3e%3c/polyline%3e%3c/svg%3e`,ie=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'%3e%3c/circle%3e%3cpath%20d='M16%208v5a3%203%200%200%200%206%200v-1a10%2010%200%201%200-3.92%207.94'%3e%3c/path%3e%3c/svg%3e`,L=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6%2019.79%2019.79%200%200%201-3.07-8.67A2%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'%3e%3c/path%3e%3c/svg%3e`,R=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cpolyline%20points='12%206%2012%2012%2016%2014'%3e%3c/polyline%3e%3c/svg%3e`,z=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='16'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='8'%20x2='12.01'%20y2='8'%3e%3c/line%3e%3c/svg%3e`;function B(){window.hcaptcha.render(`hcaptcha-widget`,{sitekey:`50b2fe65-b00b-4b9e-ad62-3ba471098be2`,theme:document.documentElement.classList.contains(`dark`)?`dark`:`light`,size:window.innerWidth<768?`compact`:`normal`})}async function V(e,t){if(t.preventDefault(),!H(e))return;if(!window.hcaptcha?.getResponse()){q(e,`Please complete the captcha.`);return}let n=e.querySelector(`button[type="submit"]`);n.disabled=!0,n.classList.add(`text-text-3`);let r=new FormData(e);r.delete(`g-recaptcha-response`),r.append(`access_key`,`32669c55-bd87-4cb8-a80d-1aeac67894b1`);try{let t=await(await fetch(`https://api.web3forms.com/submit`,{method:`POST`,headers:{Accept:`application/json`},body:r})).json();if(t.success)K(e);else throw Error(t.message)}catch(t){q(e,t),n.disabled=!1,n.classList.remove(`text-text-3`),window.hcaptcha?.reset()}}function H(e){let t=!0;return e.querySelectorAll(`input, textarea`).forEach(e=>{e.closest(`#hcaptcha-widget`)||(e.dataset.listenerAttached||(e.addEventListener(`input`,()=>{U(e)}),e.dataset.listenerAttached=`true`),U(e)||(t=!1))}),t}function U(e){G(e);let t=e.value.trim();return e.getAttribute(`name`)===`email`&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)?(W(e,`Please enter a valid email`),!1):!t||t.length<5?(W(e,`Please fill out this field with at least 5 characters`),!1):!0}function W(e,t){e.classList.add(`focus-visible:ring-error`,`focus:ring-error`),e.insertAdjacentHTML(`afterend`,`
+  `}var ae=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23047857'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2011.08V12a10%2010%200%201%201-5.93-9.14'%3e%3c/path%3e%3cpolyline%20points='22%204%2012%2014.01%209%2011.01'%3e%3c/polyline%3e%3c/svg%3e`,I=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='4'%3e%3c/circle%3e%3cpath%20d='M16%208v5a3%203%200%200%200%206%200v-1a10%2010%200%201%200-3.92%207.94'%3e%3c/path%3e%3c/svg%3e`,L=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6%2019.79%2019.79%200%200%201-3.07-8.67A2%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'%3e%3c/path%3e%3c/svg%3e`,R=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cpolyline%20points='12%206%2012%2012%2016%2014'%3e%3c/polyline%3e%3c/svg%3e`,z=`data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%234DA6FF'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3ccircle%20cx='12'%20cy='12'%20r='10'%3e%3c/circle%3e%3cline%20x1='12'%20y1='16'%20x2='12'%20y2='12'%3e%3c/line%3e%3cline%20x1='12'%20y1='8'%20x2='12.01'%20y2='8'%3e%3c/line%3e%3c/svg%3e`;function B(){window.hcaptcha.render(`hcaptcha-widget`,{sitekey:`50b2fe65-b00b-4b9e-ad62-3ba471098be2`,theme:document.documentElement.classList.contains(`dark`)?`dark`:`light`,size:window.innerWidth<768?`compact`:`normal`})}async function V(e,t){if(t.preventDefault(),!H(e))return;if(!window.hcaptcha?.getResponse()){q(e,`Please complete the captcha.`);return}let n=e.querySelector(`button[type="submit"]`);n.disabled=!0,n.classList.add(`text-text-3`);let r=new FormData(e);r.delete(`g-recaptcha-response`),r.append(`access_key`,`32669c55-bd87-4cb8-a80d-1aeac67894b1`);try{let t=await(await fetch(`https://api.web3forms.com/submit`,{method:`POST`,headers:{Accept:`application/json`},body:r})).json();if(t.success)K(e);else throw Error(t.message)}catch(t){q(e,t),n.disabled=!1,n.classList.remove(`text-text-3`),window.hcaptcha?.reset()}}function H(e){let t=!0;return e.querySelectorAll(`input, textarea`).forEach(e=>{e.closest(`#hcaptcha-widget`)||(e.dataset.listenerAttached||(e.addEventListener(`input`,()=>{U(e)}),e.dataset.listenerAttached=`true`),U(e)||(t=!1))}),t}function U(e){G(e);let t=e.value.trim();return e.getAttribute(`name`)===`email`&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)?(W(e,`Please enter a valid email`),!1):!t||t.length<5?(W(e,`Please fill out this field with at least 5 characters`),!1):!0}function W(e,t){e.classList.add(`focus-visible:ring-error`,`focus:ring-error`),e.insertAdjacentHTML(`afterend`,`
     <p role="alert" class="field-error text-body-sm-style text-error animate-fade-in">${t}</p>
   `)}function G(e){let t=e.nextElementSibling;t?.classList.contains(`field-error`)&&t.remove(),e.classList.remove(`focus-visible:ring-error`,`focus:ring-error`)}function K(e){e.setAttribute(`aria-hidden`,`true`),e.insertAdjacentHTML(`beforeend`,`
     <div role="alert" class="animate-fade-in flex flex-col gap-2 items-center justify-center absolute inset-5 rounded-2xl bg-card z-10">
-      <img src="${I}" class="w-8 h-8" alt="Success Icon" />
+      <img src="${ae}" class="w-8 h-8" alt="Success Icon" />
       <h4 class="text-text-1">Message sent</h4>
       <p class="text-body-sm-style text-text-2">
         We'll be in touch within 48 hours.
@@ -722,13 +722,13 @@
     </div>
   `)}function q(e,t){let n=e.querySelector(`.form-error`);n&&n.remove(),e.insertAdjacentHTML(`beforeend`,`
     <div role="alert" class="animate-fade-in form-error flex flex-col gap-2 items-center justify-center rounded-2xl bg-card pointer-events-none mt-2">
-      <img src="${S}" class="w-8 h-8" alt="Alert Icon" />
+      <img src="${x}" class="w-8 h-8" alt="Alert Icon" />
       <h4 class="text-text-1">Message not sent</h4>
       <p class="text-body-sm-style text-error text-center">
         ${t}
       </p>
     </div>
-  `)}function J(){let e=document.getElementById(`contact-us-form`);if(e){if(window.hcaptcha)window.hcaptcha.reset(),B();else{window.onHcaptchaLoad=B;let e=document.createElement(`script`);e.src=`https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit`,document.head.appendChild(e)}e.addEventListener(`submit`,t=>V(e,t))}}function Y(){return`
+  `)}function J(){let e=document.getElementById(`contact-us-form`);if(e){if(window.hcaptcha)window.hcaptcha.reset(),B();else{window.onHcaptchaLoad=B;let e=document.createElement(`script`);e.src=`https://js.hcaptcha.com/1/api.js?onload=onHcaptchaLoad&render=explicit`,document.head.appendChild(e)}e.addEventListener(`submit`,t=>V(e,t))}}function oe(){return`
   <div class="bg-surface animate-fade-in">
     <section id="contact-us-split">
       <div class="main-container flex max-sm:flex-col justify-between gap-16 py-24">
@@ -757,7 +757,7 @@
           <div class="flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <div class="p-2 bg-accent/20 rounded-lg">
-                <img src="${ie}" class="w-5 h-5" alt="@"/>
+                <img src="${I}" class="w-5 h-5" alt="@"/>
               </div>
               <a href="mailto:baig.faizan1999@gmail.com" target="_blank" class="text-body-style text-accent">baig.faizan1999@gmail.com</a>
             </div>
@@ -788,7 +788,7 @@
       </div>
     </section>
   </div>
-  `}function ae(){return`
+  `}function se(){return`
   <div class="bg-page-bg animate-fade-in">
     <div class="dark main-container flex justify-center pt-28 pb-24">
       <div class="flex flex-col items-center gap-5">
@@ -805,10 +805,10 @@
       </div>
     </div>
   </div>
-  `}var oe={"/":m,"/about":b,"/services":re,"/portfolio":N,"/contact":Y,"/privacy":F},se={"/":`Amplidia`,"/about":`About Us | Amplidia`,"/services":`Services | Amplidia`,"/portfolio":`Portfolio | Amplidia`,"/contact":`Contact Us | Amplidia`,"/privacy":`Privacy Policy | Amplidia`},X=null,Z=document.getElementById(`app-container`);Z.insertAdjacentHTML(`beforebegin`,a()),Z.insertAdjacentHTML(`afterend`,l()),i(),n();function Q(){return window.location.pathname.replace(e,``)||`/`}async function $(){window.location.pathname===`/index.html`&&history.replaceState(null,``,e+`/`);let t=Q();X=t,ce(t),window.location.hash||window.scrollTo(0,0),Z.innerHTML=`
+  `}var ce={"/":m,"/about":ee,"/services":b,"/portfolio":M,"/contact":oe,"/privacy":F},le={"/":`Amplidia`,"/about":`About Us | Amplidia`,"/services":`Services | Amplidia`,"/portfolio":`Portfolio | Amplidia`,"/contact":`Contact Us | Amplidia`,"/privacy":`Privacy Policy | Amplidia`},Y=null,X=document.getElementById(`app-container`);X.insertAdjacentHTML(`beforebegin`,a()),X.insertAdjacentHTML(`afterend`,l()),i(),n();function Z(){return window.location.pathname.replace(t,``)||`/`}async function Q(){window.location.pathname===`/index.html`&&history.replaceState(null,``,`/`);let e=Z();Y=e,$(e),window.location.hash||window.scrollTo(0,0),X.innerHTML=`
     <div id="page-loader" role="status" aria-busy="true" aria-label="Loading"
       class="flex justify-center items-center fixed inset-0 z-60 bg-page-bg h-screen pb-15"
       >
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-  `;let n=oe[t]??ae;document.title=se[t]??`404 | Amplidia`,Z.innerHTML=n(),t===`/contact`&&J(),t===`/privacy`&&await P(),t===`/portfolio`?await E():M(),document.getElementById(`initial-loader`)?.remove()}function ce(e){let t=e===`/`?`home`:e.replace(`/`,``);document.getElementById(`burger-nav-links`).querySelectorAll(`a`).forEach(e=>{e.dataset.page===t?e.setAttribute(`aria-current`,`page`):e.removeAttribute(`aria-current`)})}document.addEventListener(`click`,t=>{let n=t.target.closest(`a`);n&&n.target!==`_blank`&&(n.href&&!n.href.startsWith(window.location.origin)||n.getAttribute(`href`).startsWith(`#`)||(t.preventDefault(),history.pushState(null,``,e+n.getAttribute(`href`)),$().catch(console.error)))}),window.addEventListener(`popstate`,()=>{X!==Q()&&$().catch(console.error)}),$().catch(console.error);
+  `;let t=ce[e]??se;document.title=le[e]??`404 | Amplidia`,X.innerHTML=t(),e===`/contact`&&J(),e===`/privacy`&&await N(),e===`/portfolio`?await T():j(),document.getElementById(`initial-loader`)?.remove()}function $(e){let t=e===`/`?`home`:e.replace(`/`,``);document.getElementById(`burger-nav-links`).querySelectorAll(`a`).forEach(e=>{e.dataset.page===t?e.setAttribute(`aria-current`,`page`):e.removeAttribute(`aria-current`)})}document.addEventListener(`click`,e=>{let n=e.target.closest(`a`);n&&n.target!==`_blank`&&(n.href&&!n.href.startsWith(window.location.origin)||n.getAttribute(`href`).startsWith(`#`)||(e.preventDefault(),history.pushState(null,``,t+n.getAttribute(`href`)),Q().catch(console.error)))}),window.addEventListener(`popstate`,()=>{Y!==Z()&&Q().catch(console.error)}),Q().catch(console.error);

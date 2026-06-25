@@ -6,7 +6,8 @@ import eyeIcon from "../assets/eye.svg";
 
 export default function renderAbout() {
   return `
-  <div class="animate-fade-in">
+  <div class="bg-surface animate-fade-in">
+    <!----------------------------------------------- Hero area ------------------------------------------------------->
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
         <p class="text-overline-style text-accent">our story</p>
@@ -22,14 +23,17 @@ export default function renderAbout() {
       </div>
     </section>
 
+    <!----------------------------------------------- About us mission ----------------------------------------------->
     <section id="about-us-mission">
       <div
         class="main-container flex max-sm:flex-col-reverse justify-between items-center gap-16 py-24 border-b border-border">
+        <!----------------------------------------------- Image ------------------------------------------------------>
         <div class="flex-1 flex items-center">
           <img src="${imgAbout}" alt="About Us Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
         </div>
 
+        <!----------------------------------------------- Content ---------------------------------------------------->
         <div class="flex-1 flex flex-col items-start gap-5">
           <p class="text-overline-style text-accent">who we are</p>
           <h2 class="text-text-1">Bridging brands and creators</h2>
@@ -47,6 +51,7 @@ export default function renderAbout() {
       </div>
     </section>
 
+    <!----------------------------------------------- About us values ------------------------------------------------>
     <section id="about-us-values">
       <div class="main-container flex flex-col gap-10 py-24">
         <div class="flex flex-col gap-5">
@@ -55,6 +60,7 @@ export default function renderAbout() {
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          <!----------------------------------------------- Card grid ------------------------------------------------>
           <div class="feature-card flex gap-7 items-center">
             <img src="${heartIcon}" class="w-8 h-8" alt="Heart Icon" />
             <div class="flex flex-col gap-3">
@@ -98,6 +104,7 @@ export default function renderAbout() {
       </div>
     </section>
 
+    <!----------------------------------------------- CTA ------------------------------------------------------------>
     <section id="cta-section" class="bg-page-bg border-t border-border">
       <div class="dark main-container flex flex-col items-center gap-5 py-16">
         <h2 class="text-text-1">Want to work with us?</h2>

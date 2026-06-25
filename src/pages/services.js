@@ -8,7 +8,8 @@ import lineChartIcon from "../assets/line-chart.svg";
 
 export default function renderServices() {
   return `
-  <div class="animate-fade-in">
+  <div class="bg-surface animate-fade-in">
+    <!-------------------------------------------------- Hero area -------------------------------------------------------->
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
         <p class="text-overline-style text-accent">what we offer</p>
@@ -20,8 +21,10 @@ export default function renderServices() {
       </div>
     </section>
 
+    <!-------------------------------------------------- Services mission ------------------------------------------------->
     <section id="services-mission">
       <div class="main-container flex max-sm:flex-col justify-between items-center gap-16 py-24 border-b border-border">
+        <!-------------------------------------------------- content ------------------------------------------------------>
         <div class="flex-1 flex flex-col items-start gap-5">
           <p class="text-overline-style text-accent">how we work</p>
           <h2 class="text-text-1">One team, every stage of the campaign</h2>
@@ -32,6 +35,8 @@ export default function renderServices() {
             lost in translation.
           </p>
         </div>
+
+        <!-------------------------------------------------- Image -------------------------------------------------------->
         <div class="flex-1 flex justify-end items-center">
           <img src="${servicesImg}" alt="Services Section Visual"
             class="max-w-full w-100 aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
@@ -39,6 +44,7 @@ export default function renderServices() {
       </div>
     </section>
 
+    <!-------------------------------------------------- Info cards ------------------------------------------------------->
     <section id="services-info-cards">
       <div class="main-container flex flex-col gap-10 py-24">
         <div class="flex flex-col gap-5">
@@ -47,6 +53,7 @@ export default function renderServices() {
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          <!-------------------------------------------------- Card grid -------------------------------------------------->
           <div class="feature-card border-l-4 border-l-accent rounded-l-none flex gap-7 pb-4">
             <img src="${checkSquareIcon}" class="w-8 h-8" alt="Check Box Ticked Icon" />
             <div class="flex flex-col gap-3">
@@ -149,6 +156,7 @@ export default function renderServices() {
       </div>
     </section>
 
+    <!-------------------------------------------------- CTA -------------------------------------------------------------->
     <section id="cta-section" class="bg-page-bg border-t border-border">
       <div class="dark main-container flex flex-col items-center gap-5 py-16">
         <h2 class="text-text-1">Ready to start a campaign?</h2>

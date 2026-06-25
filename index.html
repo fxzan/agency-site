@@ -1,67 +1,73 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet" />
-  <title>Amplidia</title>
-  <style>
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!----------------------------------------------- Google fonts ----------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet" />
+    <title>Amplidia</title>
+    <!------------------------------------------------- Style for loading spinner -------------------------------------------->
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
       }
-    }
-  </style>
-  <script>
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    const theme =
-      stored === "system" || !stored
-        ? prefersDark
-          ? "dark"
-          : "light"
-        : stored;
-    if (theme === "dark") document.documentElement.classList.add("dark");
-  </script>
-</head>
+    </style>
+    <!------------------------------------------------- Script for theme before fetch ---------------------------------------->
+    <script>
+      const stored = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      const theme =
+        stored === "system" || !stored
+          ? prefersDark
+            ? "dark"
+            : "light"
+          : stored;
+      if (theme === "dark") document.documentElement.classList.add("dark");
+    </script>
+  </head>
 
-<body class="flex flex-col justify-between bg-page-bg pt-15 min-h-screen">
-  <div id="initial-loader" role="status" aria-busy="true" aria-label="Loading" style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 9999;
-        inset: 0;
-        background-color: #0f1b2d;
-        height: 100vh;
-        padding-bottom: calc(0.25rem * 15);
-      ">
-    <div style="
-          width: 2rem;
-          height: 2rem;
-          border: 2px solid #4da6ff;
-          border-top-color: transparent;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        "></div>
-  </div>
+  <body class="flex flex-col justify-between bg-page-bg pt-15 min-h-screen">
+    <!------------------------------------------------- Loading spinner ----------------------------------------------------->
+    <div id="initial-loader" role="status" aria-busy="true" aria-label="Loading" style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          z-index: 9999;
+          inset: 0;
+          background-color: #0f1b2d;
+          height: 100vh;
+          padding-bottom: calc(0.25rem * 15);
+        ">
+      <div style="
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid #4da6ff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          "></div>
+    </div>
 
-  <div id="overlay"
-    class="h-screen w-screen bg-black/40 opacity-0 fixed top-0 z-50 pointer-events-none invisible transition-opacity duration-300">
-  </div>
+    <!------------------------------------------------- Navbar overlay ----------------------------------------------------->
+    <div id="overlay"
+      class="h-screen w-screen bg-black/40 opacity-0 fixed top-0 z-50 pointer-events-none invisible transition-opacity duration-300">
+    </div>
 
-  <main id="app-container" class="bg-surface relative"></main>
+    <!------------------------------------------------- App page container ------------------------------------------------->
+    <main id="app-container" class="relative"></main>
 
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 
 </html>

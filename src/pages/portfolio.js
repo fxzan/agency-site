@@ -4,41 +4,48 @@ import chevronRight from "../assets/chevron-right.svg";
 
 import { trapFocus } from "../js/utils";
 
+//--- Timer variable for carousel ---------------------------------------------------------------------------
 let autoAdvanceTimer = null;
 
 export async function initPortfolio() {
   const grid = document.getElementById("campaigns-grid");
   const slideBox = document.getElementById("carousel-slide");
 
-  try {
-    slideBox.innerHTML = `
+  //--- Insert loading spinner before fetch -----------------------------------------------------------------
+  slideBox.innerHTML = `
     <div class="flex justify-center py-44">
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-    `
-    grid.innerHTML = `
+  `;
+  grid.innerHTML = `
     <div class="col-span-3 flex justify-center py-12">
       <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
     </div>
-    `
+  `;
+
+  try {
     const response = await fetch("/data/campaigns.json");
 
     if (!response.ok) throw new Error(response.status);
 
     const campaigns = await response.json();
-    
+
     const featured = campaigns.filter((c) => c.featured);
 
+    //--- Render campaign cards ------------------------------------------------------------------------------
     slideBox.innerHTML = renderCarouselSlide(featured[0]);
     renderGrid(campaigns, grid);
 
-    grid.addEventListener('click', (e) => {
-      const gridCard = e.target.closest('.grid-card');
+    //--- Attach event listener for cards -------------------------------------------------------------------
+    grid.addEventListener("click", (e) => {
+      const gridCard = e.target.closest(".grid-card");
+      if (!gridCard) return; // if not grid card do nothing
 
-      if (!gridCard) return;
-
-      renderCampaignDetails(campaigns.find(c => c.campaignPath === gridCard.id))
-    })
+      //--- Render campaign details on click ----------------------------------------------------------------
+      renderCampaignDetails(
+        campaigns.find((c) => c.campaignPath === gridCard.id),
+      );
+    });
 
     initCarousel(featured, slideBox);
   } catch (error) {
@@ -60,6 +67,7 @@ export async function initPortfolio() {
   }
 }
 
+//--- Function for rendering each grid card -----------------------------------------------------------------
 function renderGridCard(gridCampaign) {
   return `
     <div id="${gridCampaign.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
@@ -74,39 +82,62 @@ function renderGridCard(gridCampaign) {
   `;
 }
 
+//--- Function for rendering grid cards  --------------------------------------------------------------------
 function renderGrid(allCampaigns, grid) {
-  let indexLast = 0 
-  
-  grid.innerHTML = allCampaigns.slice(indexLast, indexLast + 6).map((c) => renderGridCard(c)).join('');
+  let indexLast = 0; // tracker for showing more cards button
+
+  //--- Render first batch of grid cards --------------------------------------------------------------------
+  grid.innerHTML = allCampaigns
+    .slice(indexLast, indexLast + 6)
+    .map((c) => renderGridCard(c))
+    .join("");
   indexLast += 6;
 
+  //--- Render next batch of grid cards  --------------------------------------------------------------------
   function showMoreCampaigns() {
-    grid.insertAdjacentHTML('beforeend', allCampaigns.slice(indexLast, indexLast + 6).map((c) => renderGridCard(c)).join(''));
+    grid.insertAdjacentHTML(
+      "beforeend",
+      allCampaigns
+        .slice(indexLast, indexLast + 6)
+        .map((c) => renderGridCard(c))
+        .join(""),
+    );
     indexLast += 6;
-    
+
+    //--- Remove see more button if all cards rendered  -----------------------------------------------------
     if (indexLast >= allCampaigns.length) {
-      document.getElementById('see-more-campaigns-button').remove()
+      document.getElementById("see-more-campaigns-button").remove();
     }
   }
 
+  //--- Insert see more button if all cards not rendered (first load) ---------------------------------------
   if (allCampaigns.length > 6) {
-    grid.insertAdjacentHTML('afterend', `
+    grid.insertAdjacentHTML(
+      "afterend",
+      `
       <button id="see-more-campaigns-button" class="btn btn-ghost self-end">See more →</button>
-    `);
-    
-    document.getElementById('see-more-campaigns-button').addEventListener('click', showMoreCampaigns);
+    `,
+    );
+    //--- Attach event listener -----------------------------------------------------------------------------
+    document
+      .getElementById("see-more-campaigns-button")
+      .addEventListener("click", showMoreCampaigns);
   }
-
 }
 
+//--- Function for rendering campaign details ---------------------------------------------------------------
 function renderCampaignDetails(campaign) {
+  //--- Guard to prevent double render ----------------------------------------------------------------------
+  document.getElementById("carousel-backdrop")?.remove();
+  document.getElementById("carousel-details")?.remove();
+
   const campaignDetails = `
     <div id="carousel-backdrop"
       class="h-screen w-screen bg-black/50 fixed inset-0 z-60 transition-opacity duration-300 ease-out">
     </div>
     <div id="carousel-details" class="flex flex-col gap-2 fixed z-70 main-container top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] animate-fade-in">
       <button aria-label="Close" id="close-campaign-details"
-        class="self-end flex flex-col gap-1.5 cursor-pointer z-10">
+        class="self-end flex flex-col gap-1.5 cursor-pointer">
         <span class="w-6 h-0.5 bg-accent translate-y-1 rotate-45 block"></span>
         <span class="w-6 h-0.5 bg-accent -translate-y-1 -rotate-45 block"></span>
       </button>
@@ -123,8 +154,8 @@ function renderCampaignDetails(campaign) {
           </p>
           <div class="flex flex-wrap gap-6">
             ${campaign.metrics
-          .map(
-            (m) => `
+      .map(
+        (m) => `
               <div class="flex flex-col items-center bg-accent/10 px-4 py-2 rounded-lg">
                 <p class="font-display text-heading-2/heading-2 font-bold text-accent">
                   ${m.metricValue}
@@ -132,44 +163,58 @@ function renderCampaignDetails(campaign) {
                 <p class="text-body-sm-style text-text-2 mt-1">${m.metricName}</p>
               </div>
             `,
-          )
-          .join("")}
+      )
+      .join("")}
           </div>  
         </div>
       </div>
     </div>
-  `
-  document.getElementById('app-container').insertAdjacentHTML('beforebegin', campaignDetails);
+  `;
 
-  const controller = new AbortController();
+  //--- Render campaign detail and backdrop -----------------------------------------------------------------
+  document
+    .getElementById("app-container")
+    .insertAdjacentHTML("beforebegin", campaignDetails);
+
+  const controller = new AbortController(); // abort controller for removing event listeners
   const { signal } = controller; //controller.signal
 
-  const carouselBackdrop = document.getElementById('carousel-backdrop');
-  const carouselDetails = document.getElementById('carousel-details');
+  const carouselBackdrop = document.getElementById("carousel-backdrop");
+  const carouselDetails = document.getElementById("carousel-details");
+
+  document.body.classList.add("overflow-hidden");
+  trapFocus(carouselDetails, signal); //focus trap
   
-  document.body.classList.add('overflow-hidden');
-  trapFocus(carouselBackdrop, signal)
-  
-  function closeCampaign () {
-    carouselBackdrop.classList.add('opacity-0')
-    carouselDetails.classList.remove('animate-fade-in')
-    carouselDetails.classList.add('animate-fade-out', 'opacity-0');
+  //--- Function to close campaign details ------------------------------------------------------------------
+  function closeCampaign() {
+    //--- Transition effects before close -------------------------------------------------------------------
+    carouselBackdrop.classList.add("opacity-0");
+    carouselDetails.classList.remove("animate-fade-in");
+    carouselDetails.classList.add("animate-fade-out", "opacity-0"); // guard incase animation ends before timeout
     controller.abort();
+    //--- Close after transition end ------------------------------------------------------------------------
     setTimeout(() => {
       carouselDetails.remove();
       carouselBackdrop.remove();
-      document.body.classList.remove('overflow-hidden');
-    }, 300)
+      document.body.classList.remove("overflow-hidden");
+    }, 300);
   }
 
-  carouselBackdrop.addEventListener('click', closeCampaign, { signal: signal });
-  document.getElementById('close-campaign-details').addEventListener('click', closeCampaign, { signal }); //shorthand used
-  
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeCampaign();
-  }, { signal })
+  //--- Attach event listeners ------------------------------------------------------------------------------
+  carouselBackdrop.addEventListener("click", closeCampaign, { signal: signal });
+  document
+    .getElementById("close-campaign-details")
+    .addEventListener("click", closeCampaign, { signal }); //shorthand used
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") closeCampaign();
+    },
+    { signal },
+  );
 }
 
+//--- Function to render carousel card ----------------------------------------------------------------------
 function renderCarouselSlide(campaignSlide) {
   return `
     <div class="flex-1 flex items-center">
@@ -201,7 +246,9 @@ function renderCarouselSlide(campaignSlide) {
   `;
 }
 
+//--- Function for carousel rendering -----------------------------------------------------------------------
 function initCarousel(featuredCampaigns, slideContainer) {
+  //--- Insert carousel dots --------------------------------------------------------------------------------
   document.getElementById("carousel-dots").innerHTML = featuredCampaigns
     .map(
       (_, i) => `
@@ -214,19 +261,21 @@ function initCarousel(featuredCampaigns, slideContainer) {
     .getElementById("carousel-dots")
     .querySelectorAll(".dot");
 
-  let current = 0;
+  let current = 0; // tracker to track carousel slides + dots
 
+  //--- Navigate previous/next slide -----------------------------------------------------------------------
   function navigateSlide(index) {
     current = (index + featuredCampaigns.length) % featuredCampaigns.length;
+    //--- Transition effect before next/prev slide ---------------------------------------------------------
     slideContainer.classList.add("opacity-0");
-
+    //--- Render after transition time ---------------------------------------------------------------------
     setTimeout(() => {
       slideContainer.innerHTML = renderCarouselSlide(
         featuredCampaigns[current],
       );
       slideContainer.classList.remove("opacity-0");
     }, 600);
-
+    //--- update dots --------------------------------------------------------------------------------------
     dotsArray.forEach((dot, i) => {
       if (i === current) {
         dot.classList.add("w-5", "bg-accent");
@@ -238,21 +287,21 @@ function initCarousel(featuredCampaigns, slideContainer) {
     });
   }
 
+  //--- Reset timer on manual nav --------------------------------------------------------------------------
   function resetAutoAdvance() {
     clearInterval(autoAdvanceTimer);
     autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000);
   }
 
+  //--- Attach event listeners -----------------------------------------------------------------------------
   document.getElementById("carousel-nav-prev").addEventListener("click", () => {
     navigateSlide(current - 1);
     resetAutoAdvance();
   });
-
   document.getElementById("carousel-nav-next").addEventListener("click", () => {
     navigateSlide(current + 1);
     resetAutoAdvance();
   });
-
   dotsArray.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       navigateSlide(i);
@@ -260,18 +309,22 @@ function initCarousel(featuredCampaigns, slideContainer) {
     });
   });
 
-  autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000);
+  autoAdvanceTimer = setInterval(() => navigateSlide(current + 1), 5000); // auto advance init
 }
 
+//--- Clean up ---------------------------------------------------------------------------------------------
 export function destroyPortfolio() {
   clearInterval(autoAdvanceTimer);
   autoAdvanceTimer = null;
-  document.getElementById('see-more-campaigns-button')?.remove();
+  document.getElementById("see-more-campaigns-button")?.remove();
+  document.getElementById('carousel-details')?.remove();
+  document.getElementById('carousel-backdrop')?.remove();
+  document.body.classList.remove("overflow-hidden");
 }
 
 export default function renderPortfolio() {
   return `
-  <div class="animate-fade-in">
+  <div class="bg-surface animate-fade-in">
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 items-center pt-14 pb-12">
         <p class="text-overline-style text-accent">our portfolio</p>
@@ -318,6 +371,7 @@ export default function renderPortfolio() {
       </div>
     </section>
 
+    <!--------------------------------------------------- CTA --------------------------------------------------------------->
     <section id="cta-section" class="bg-page-bg border-t border-border">
       <div class="dark main-container flex flex-col items-center gap-5 py-16">
         <h2 class="text-text-1">Want results like these?</h2>

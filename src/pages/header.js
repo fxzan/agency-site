@@ -46,7 +46,7 @@ export default function renderHeader() {
 
             <!--------------------------------------------- Menu close button - hidden on large screens -------------------->
             <li><button aria-label="Close Menu" id="close-burger-button"
-              class="flex flex-col gap-1.5 cursor-pointer absolute top-6 sm:hidden">
+              class="flex flex-col gap-1.5 cursor-pointer absolute top-6 right-8 sm:hidden">
               <span class="w-6 h-0.5 bg-accent translate-y-1 rotate-45"></span>
               <span class="w-6 h-0.5 bg-accent -translate-y-1 -rotate-45"></span>
             </button></li>

@@ -145,7 +145,7 @@
 
   .nav-link:hover,
   .nav-link:active,
-  .nav-link:focus,
+  .nav-link:focus-visible,
   .nav-link[aria-current="page"] {
     @apply text-[#E8EDF2];
   }

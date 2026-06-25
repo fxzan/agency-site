@@ -18,6 +18,8 @@ export async function initPrivacyPolicy() {
     const html = await response.text();
 
     privacySection.innerHTML = html;
+    initScrollSpy();
+    
   } catch (error) {
     console.log(error);
     privacySection.innerHTML = `
@@ -31,6 +33,38 @@ export async function initPrivacyPolicy() {
       </div>
     `;
   }
+}
+
+function initScrollSpy () {
+  const sideLinks = document.querySelectorAll('#privacy-sidebar-nav a[data-hash]');
+  const sections = Array.from(sideLinks).map(link => document.getElementById(link.dataset.hash)).filter(Boolean);
+
+  // update navlinks to active
+  function setActive(id) {
+    sideLinks.forEach(link => {
+      if (link.dataset.hash === id) link.classList.add('active');
+      else link.classList.remove('active');
+    })
+  }
+
+  // observer for when section is within top 10% of viewport
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    })
+  }, {
+    rootMargin: '-10% 0px -80% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(section => observer.observe(section)); //observe each section and callback
+
+  // click event listeners
+  sideLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      setActive(link.dataset.hash);
+    });
+  });
 }
 
 export default function renderPrivacyPolicy() {

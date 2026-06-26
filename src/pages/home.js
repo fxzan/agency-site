@@ -15,23 +15,23 @@ export default function renderHome() {
           <p class="text-overline-style text-accent">
             amplify your influence
           </p>
-          <h1 class="text-text-1 -ml-2">
+          <h1 class="text-text-1 -ml-2 animate-fade-in-500">
             <img src="${amplidiaIcon}" class="w-14 h-14 inline -translate-y-1.5" alt="A" />mplidia
           </h1>
-          <p class="text-body-lg-style text-text-2">
+          <p class="text-body-lg-style text-text-2 animate-fade-in-700">
             We connect brands with creators that can reach the perfect
             audience. <br />
             Strategic matching, seamless execution, measurable results.
           </p>
-          <div class="flex max-md:flex-col items-start gap-4 mt-5">
+          <div class="flex max-md:flex-col items-start gap-4 mt-5 animate-fade-in-900">
             <a href="/portfolio" class="btn btn-primary text-center w-42">See our work</a>
             <a href="/services" class="btn btn-secondary text-center w-42">What we offer</a>
           </div>
-          <a href="/about" class="btn btn-ghost">More about us →</a>
+          <a href="/about" class="btn btn-ghost animate-fade-in-900">More about us →</a>
         </div>
 
         <!-------------------------------------------------- Image -------------------------------------------------------->
-        <div class="flex-1 max-sm:hidden">
+        <div class="flex-1 max-sm:hidden animate-fade-in-500">
           <img src="${homeHeroImage}" alt="Hero Section Visual"
             class="w-full aspect-3/4 md:aspect-4/3 rounded-2xl bg-page-bg object-cover object-center" />
         </div>

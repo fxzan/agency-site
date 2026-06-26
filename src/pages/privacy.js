@@ -73,8 +73,8 @@ export default function renderPrivacyPolicy() {
       <section id="head-section" class="bg-page-bg border-b border-border">
         <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-14 pb-12">
           <p class="text-overline-style text-accent">legal</p>
-          <h1 class="text-text-1">Privacy policy</h1>
-          <p class="text-body-lg-style text-text-2">
+          <h1 class="text-text-1 animate-fade-in-500">Privacy policy</h1>
+          <p class="text-body-lg-style text-text-2 animate-fade-in-700">
             Last updated October 27, 2025
           </p>
         </div>

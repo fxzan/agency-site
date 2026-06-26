@@ -11,12 +11,12 @@ export default function renderAbout() {
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
         <p class="text-overline-style text-accent">our story</p>
-        <h1 class="text-text-1">Built on authentic partnerships</h1>
-        <p class="text-body-lg-style text-text-2">
+        <h1 class="text-text-1 animate-fade-in-500">Built on authentic partnerships</h1>
+        <p class="text-body-lg-style text-text-2 animate-fade-in-700">
           We founded Amplidia with one belief — the best campaigns come from
           genuine alignment.
         </p>
-        <p class="text-body-lg-style text-text-2">
+        <p class="text-body-lg-style text-text-2 animate-fade-in-700">
           We help brands and influencers connect seamlessly with the perfect
           match - to create collaborations that truly work, for both sides
         </p>

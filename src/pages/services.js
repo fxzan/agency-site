@@ -13,8 +13,8 @@ export default function renderServices() {
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 pt-28 pb-24">
         <p class="text-overline-style text-accent">what we offer</p>
-        <h1 class="text-text-1">Every layer of your campaign, covered</h1>
-        <p class="text-body-lg-style text-text-2">
+        <h1 class="text-text-1 animate-fade-in-500">Every layer of your campaign, covered</h1>
+        <p class="text-body-lg-style text-text-2 animate-fade-in-700">
           From first brief to final report — we handle the parts that take
           longest to get right.
         </p>

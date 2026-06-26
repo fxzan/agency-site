@@ -3,13 +3,30 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /*  ------------  Animation styles  ------------  */
   --animate-fade-in: fadeIn 0.3s ease-in;
   --animate-fade-out: fadeOut 0.3s ease;
+
+  --animate-fade-in-500: fadeInExtended 0.5s ease-in;
+  --animate-fade-in-700: fadeInExtended 0.7s ease-in;
+  --animate-fade-in-900: fadeInExtended 0.9s ease-in;
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(-0.5rem);
+      transform: translateY(0.5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInExtended {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
     }
 
     to {
@@ -26,7 +43,7 @@
 
     to {
       opacity: 0;
-      transform: translateY(-0.5rem);
+      transform: translateY(0.5rem);
     }
   }
 

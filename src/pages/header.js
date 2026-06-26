@@ -33,7 +33,7 @@ export function initHeader() {
 
 export default function renderHeader() {
   return `
-    <header class="fixed top-0 left-0 flex items-center bg-page-bg border-b border-[#d0d8e430] w-full h-15 z-100">
+    <header class="fixed top-0 left-0 flex items-center bg-page-bg/90 backdrop-blur-md border-b border-[#d0d8e430] w-full h-15 z-100">
       <div class="dark main-container">
         <nav class="flex gap-8 justify-between items-center">
           <!----------------------------------------------- Amplidia link -------------------------------------------------->

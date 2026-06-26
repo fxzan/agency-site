@@ -328,8 +328,8 @@ export default function renderPortfolio() {
     <section id="head-section" class="bg-page-bg border-b border-border">
       <div id="head-inner" class="dark main-container flex flex-col gap-5 items-center pt-14 pb-12">
         <p class="text-overline-style text-accent">our portfolio</p>
-        <h1 class="text-text-1">Campaigns we're proud of</h1>
-        <p class="text-body-lg-style text-text-2">
+        <h1 class="text-text-1 animate-fade-in-500">Campaigns we're proud of</h1>
+        <p class="text-body-lg-style text-text-2 animate-fade-in-700">
           A closer look at the partnerships we've built and the results they've delivered.
         </p>
       </div>

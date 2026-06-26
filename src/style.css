@@ -11,6 +11,8 @@
   --animate-fade-in-700: fadeInExtended 0.7s ease-in;
   --animate-fade-in-900: fadeInExtended 0.9s ease-in;
 
+  --animate-pulse-accent: pulse-accent 2.5s ease-in-out infinite;
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -45,6 +47,11 @@
       opacity: 0;
       transform: translateY(0.5rem);
     }
+  }
+
+  @keyframes pulse-accent {
+    0%, 100% { box-shadow: 0 0 0 0 #4da6ff00; }
+    50% { box-shadow: 0 0 0 0.75rem #4da6ff2e; }
   }
 
   /*  --------------  Color tokens  --------------  */

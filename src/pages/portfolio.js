@@ -43,7 +43,21 @@ export async function initPortfolio() {
 
       //--- Render campaign details on click ----------------------------------------------------------------
       renderCampaignDetails(
-        campaigns.find((c) => c.campaignPath === gridCard.id),
+        campaigns.find((c) => c.campaignPath === gridCard.id)
+      );
+    });
+
+    grid.addEventListener("keydown", (e) => {
+      const gridCard = e.target.closest(".grid-card");
+      if (e.key !== 'Enter' && e.key !== ' ') return
+      if (!gridCard) return; // if not grid card do nothing
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      //--- Render campaign details on enter/space ----------------------------------------------------------
+      renderCampaignDetails(
+        campaigns.find((c) => c.campaignPath === gridCard.id)
       );
     });
 
@@ -70,7 +84,8 @@ export async function initPortfolio() {
 //--- Function for rendering each grid card -----------------------------------------------------------------
 function renderGridCard(gridCampaign) {
   return `
-    <div id="${gridCampaign.campaignPath}" class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
+    <div id="${gridCampaign.campaignPath}" aria-label="${gridCampaign.name}" tabindex="0" role="button"
+        class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
       <img src="${gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${gridCampaign.name} Image" />
       <div class="flex flex-col gap-3 px-4 pb-4">
         <h4 class="text-text-1">${gridCampaign.name}</h4>
@@ -137,7 +152,7 @@ function renderCampaignDetails(campaign) {
     </div>
     <div id="carousel-details" class="flex flex-col gap-2 fixed z-70 main-container top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] animate-fade-in">
       <button aria-label="Close" id="close-campaign-details"
-        class="self-end flex flex-col gap-1.5 cursor-pointer">
+        class="self-end flex flex-col gap-1.5 cursor-pointer px-2 py-4 rounded-full">
         <span class="w-6 h-0.5 bg-accent translate-y-1 rotate-45 block"></span>
         <span class="w-6 h-0.5 bg-accent -translate-y-1 -rotate-45 block"></span>
       </button>
@@ -217,12 +232,12 @@ function renderCampaignDetails(campaign) {
 //--- Function to render carousel card ----------------------------------------------------------------------
 function renderCarouselSlide(campaignSlide) {
   return `
-    <div class="flex-1 flex items-center">
+    <div class="flex-1 flex items-center animate-fade-in">
       <img src="${campaignSlide.thumbUrl}" alt="${campaignSlide.name} Image"
         class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
     </div>
 
-    <div class="flex-1 flex flex-col items-start gap-5">
+    <div class="flex-1 flex flex-col items-start gap-5 animate-fade-in">
       <p class="text-overline-style text-accent">${campaignSlide.date}</p>
       <h2 class="text-text-1">${campaignSlide.name}</h2>
       <p class="text-body-style text-text-2">
@@ -267,13 +282,13 @@ function initCarousel(featuredCampaigns, slideContainer) {
   function navigateSlide(index) {
     current = (index + featuredCampaigns.length) % featuredCampaigns.length;
     //--- Transition effect before next/prev slide ---------------------------------------------------------
-    slideContainer.classList.add("opacity-0");
+    slideContainer.classList.add("animate-fade-out", "opacity-0");
     //--- Render after transition time ---------------------------------------------------------------------
     setTimeout(() => {
       slideContainer.innerHTML = renderCarouselSlide(
         featuredCampaigns[current],
       );
-      slideContainer.classList.remove("opacity-0");
+      slideContainer.classList.remove("animate-fade-out", "opacity-0");
     }, 600);
     //--- update dots --------------------------------------------------------------------------------------
     dotsArray.forEach((dot, i) => {
@@ -340,7 +355,7 @@ export default function renderPortfolio() {
         class="main-container flex flex-col gap-4 py-12 border-b border-border">
         <p class="text-overline-style text-accent">featured</p>
 
-        <div id="carousel-slide" class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7 transition-opacity duration-500 ease-in-out">
+        <div id="carousel-slide" class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7">
         </div>
 
         <div class="flex justify-between items-center gap-4 w-full">
@@ -378,7 +393,7 @@ export default function renderPortfolio() {
         <p class="text-body-style text-text-2">
           Tell us what you're working on - we'll respond within 48 hours.
         </p>
-        <a href="/contact" class="btn btn-primary">Get in touch</a>
+        <a href="/contact" class="btn btn-primary animate-pulse-accent">Get in touch</a>
       </div>
     </section>
   </div>`;

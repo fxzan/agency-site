@@ -163,7 +163,7 @@ export default function renderServices() {
         <p class="text-body-style text-text-2">
           Tell us what you're working on - we'll respond within 48 hours.
         </p>
-        <a href="/contact" class="btn btn-primary">Get in touch</a>
+        <a href="/contact" class="btn btn-primary animate-pulse-accent">Get in touch</a>
       </div>
     </section>
   </div>

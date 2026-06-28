@@ -126,12 +126,8 @@
   }
 
   /*  --------------  Focus style  --------------  */
-  *:focus {
-    @apply outline-none;
-  }
-
   *:focus-visible {
-    @apply ring-2 ring-accent rounded-md;
+    @apply outline-2 outline-offset-2 outline-accent;
   }
 }
 

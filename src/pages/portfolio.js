@@ -232,12 +232,12 @@ function renderCampaignDetails(campaign) {
 //--- Function to render carousel card ----------------------------------------------------------------------
 function renderCarouselSlide(campaignSlide) {
   return `
-    <div class="flex-1 flex items-center animate-fade-in">
+    <div class="flex-1 flex items-center">
       <img src="${campaignSlide.thumbUrl}" alt="${campaignSlide.name} Image"
         class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
     </div>
 
-    <div class="flex-1 flex flex-col items-start gap-5 animate-fade-in">
+    <div class="flex-1 flex flex-col items-start gap-5">
       <p class="text-overline-style text-accent">${campaignSlide.date}</p>
       <h2 class="text-text-1">${campaignSlide.name}</h2>
       <p class="text-body-style text-text-2">
@@ -355,7 +355,7 @@ export default function renderPortfolio() {
         class="main-container flex flex-col gap-4 py-12 border-b border-border">
         <p class="text-overline-style text-accent">featured</p>
 
-        <div id="carousel-slide" class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7">
+        <div id="carousel-slide" class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7 animate-fade-in">
         </div>
 
         <div class="flex justify-between items-center gap-4 w-full">

@@ -62,6 +62,8 @@ async function navigate() {
 
   // Navbar active link update
   updateActiveLink(path);
+
+  // Sroll to top of page
   if (!window.location.hash) {
     window.scrollTo(0, 0);
   }

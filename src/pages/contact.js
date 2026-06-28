@@ -212,7 +212,7 @@ export default function renderContact() {
               <div class="p-2 bg-accent/20 rounded-lg">
                 <img src="${phoneIcon}" class="w-5 h-5" alt="Phone"/>
               </div>
-              <a href="https://wa.me/918861088019" target="_blank" class="text-body-style text-accent">+91 88610 88019</a>
+              <a href="https://wa.me/918861088019" target="_blank" rel="noopener noreferrer" class="text-body-style text-accent">+91 88610 88019</a>
             </div>
             <div class="flex items-center gap-4">
               <div class="p-2 bg-accent/20 rounded-lg">

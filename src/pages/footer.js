@@ -11,16 +11,16 @@ export default function renderFooter() {
         <div class="flex flex-col gap-2 max-w-60">
           <!----------------------------------------------- Amplidia link ------------------------------------------------>
           <a href="/" class="font-display text-body-lg-style text-text-1 font-bold"><img
-              src="${amplidiaIcon}" class="w-5 h-5 inline -translate-0.5" />mplidia</a>
+              src="${amplidiaIcon}" class="w-5 h-5 inline -translate-0.5" alt="A" />mplidia</a>
           <div class="text-body-sm text-[#94A3C0]">
             Strategic influencer marketing for brands that care about results.
           </div>
 
           <!----------------------------------------------- Social links ------------------------------------------------->
           <div class="flex items-center gap-8 mt-4">
-            <a href="https://github.com/fxzan" target="_blank"><img src="${facebookIcon}" class="w-6 h-6" alt="FB Icon" /></a>
-            <a href="https://github.com/fxzan" target="_blank"><img src="${instagramIcon}" class="w-6 h-6" alt="Instagram Icon" /></a>
-            <a href="https://github.com/fxzan" target="_blank"><img src="${youtubeIcon}" class="w-6 h-6" alt="YT Icon" /></a>
+            <a href="https://github.com/fxzan" target="_blank" rel="noopener noreferrer"><img src="${facebookIcon}" class="w-6 h-6" alt="FB Icon" /></a>
+            <a href="https://github.com/fxzan" target="_blank" rel="noopener noreferrer"><img src="${instagramIcon}" class="w-6 h-6" alt="Instagram Icon" /></a>
+            <a href="https://github.com/fxzan" target="_blank" rel="noopener noreferrer"><img src="${youtubeIcon}" class="w-6 h-6" alt="YT Icon" /></a>
           </div>
         </div>
 

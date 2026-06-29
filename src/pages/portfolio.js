@@ -148,7 +148,7 @@ function renderCampaignDetails(campaign) {
 
   const campaignDetails = `
     <div id="carousel-backdrop"
-      class="h-screen w-screen bg-black/50 fixed inset-0 z-60 transition-opacity duration-300 ease-out">
+      class="h-screen w-screen bg-black/50 backdrop-blur-md fixed inset-0 z-60 transition-opacity duration-300 ease-out">
     </div>
     <div id="carousel-details" class="flex flex-col gap-2 fixed z-70 main-container top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] animate-fade-in">
       <button aria-label="Close" id="close-campaign-details"

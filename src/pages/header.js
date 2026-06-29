@@ -18,7 +18,10 @@ export function initHeader() {
   function closeBurgerMenu() {
     burgerNavLinks.classList.remove("max-sm:-translate-x-45");
     burgerButton.classList.remove("opacity-0");
-    overlay.classList.add("pointer-events-none", "opacity-0", "invisible");
+    overlay.classList.add("pointer-events-none", "opacity-0");
+    setTimeout(() => {
+      overlay.classList.add('invisible');
+    }, 300);
     document.body.classList.remove("overflow-hidden");
   }
 

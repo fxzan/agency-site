@@ -1,6 +1,7 @@
 import alertIcon from "../assets/alert-circle.svg";
 import chevronLeft from "../assets/chevron-left.svg";
 import chevronRight from "../assets/chevron-right.svg";
+import { base } from "../js/utils";
 
 import { trapFocus } from "../js/utils";
 
@@ -24,7 +25,7 @@ export async function initPortfolio() {
   `;
 
   try {
-    const response = await fetch("/data/campaigns.json");
+    const response = await fetch(`${base}/data/campaigns.json`);
 
     if (!response.ok) throw new Error(response.status);
 
@@ -86,7 +87,7 @@ function renderGridCard(gridCampaign) {
   return `
     <div id="${gridCampaign.campaignPath}" aria-label="${gridCampaign.name}" tabindex="0" role="button"
         class="grid-card feature-card p-0 flex flex-col gap-4 overflow-hidden rounded-b-none border-b-4 border-b-accent cursor-pointer animate-fade-in">
-      <img src="${gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${gridCampaign.name} Image" />
+      <img src="${base + gridCampaign.thumbUrl}" class="w-full h-full aspect-4/3 bg-page-bg object-cover object-center" alt="${gridCampaign.name} Image" />
       <div class="flex flex-col gap-3 px-4 pb-4">
         <h4 class="text-text-1">${gridCampaign.name}</h4>
         <p class="text-caption text-accent">
@@ -158,7 +159,7 @@ function renderCampaignDetails(campaign) {
       </button>
       <div class="bg-card border border-border rounded-2xl p-7 flex max-sm:flex-col justify-center items-center gap-7">
         <div class="flex-1 flex items-center">
-          <img src="${campaign.thumbUrl}" alt="${campaign.name} Image"
+          <img src="${base + campaign.thumbUrl}" alt="${campaign.name} Image"
             class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
         </div>
         <div class="flex-1 flex flex-col items-start gap-5">
@@ -233,7 +234,7 @@ function renderCampaignDetails(campaign) {
 function renderCarouselSlide(campaignSlide) {
   return `
     <div class="flex-1 flex items-center">
-      <img src="${campaignSlide.thumbUrl}" alt="${campaignSlide.name} Image"
+      <img src="${base + campaignSlide.thumbUrl}" alt="${campaignSlide.name} Image"
         class="max-w-full aspect-4/3 sm:aspect-3/4 md:aspect-4/3 rounded-2xl object-cover object-center" />
     </div>
 

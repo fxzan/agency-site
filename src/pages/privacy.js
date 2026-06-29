@@ -1,4 +1,5 @@
 import alertIcon from "../assets/alert-circle.svg";
+import { base } from "../js/utils";
 
 export async function initPrivacyPolicy() {
   const privacySection = document.getElementById("privacy-policy-content");
@@ -11,7 +12,7 @@ export async function initPrivacyPolicy() {
   `;
 
   try {
-    const response = await fetch("/data/privacy.html");
+    const response = await fetch(`${base}/data/privacy.html`);
 
     if (!response.ok) throw new Error(response.status);
 

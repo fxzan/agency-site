@@ -1,4 +1,5 @@
 import "./style.css";
+import { base } from "./js/utils.js";
 
 import initTheme from "./js/theme.js";
 import renderHeader, { initHeader } from "./pages/header.js";
@@ -47,14 +48,14 @@ initTheme();
 
 // --- Clean index.html path -------------------------------------------------------
 function getPath() {
-  return window.location.pathname || "/";
+  return window.location.pathname.replace(base, "") || "/";
 }
 
 // --- Navigate --------------------------------------------------------------------
 async function navigate() {
    // Clean up /index.html in the address bar
-  if (window.location.pathname === "/index.html") {
-    history.replaceState(null, "", "/");
+  if (window.location.pathname === "/index.html" || window.location.pathname === base + "/index.html") {
+    history.replaceState(null, "", base + "/");
   }
 
   const path = getPath();
@@ -120,7 +121,7 @@ document.addEventListener("click", (e) => {
 
   // Update address bar and call navigate
   e.preventDefault();
-  history.pushState(null, "", link.href);
+  history.pushState(null, "", base + link.getAttribute('href'));
   navigate().catch(console.error);
 });
 

@@ -26,3 +26,5 @@ export function trapFocus(container, signal) {
     { signal },
   );
 }
+
+export const base = import.meta.env.BASE_URL.replace(/\/$/, "");
